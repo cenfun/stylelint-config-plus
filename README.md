@@ -21,4 +21,5 @@ module.exports = {
 
 
 ## Changelog
-- 1.0.0
+- 1.0.1
+    - updated for stylelint v15

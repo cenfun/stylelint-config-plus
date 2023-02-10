@@ -1,6 +1,6 @@
 {
     "name": "stylelint-config-plus",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "stylelint-config-plus",
     "main": "lib/index.js",
     "scripts": {},
@@ -13,16 +13,16 @@
         "url": "git+https://github.com/cenfun/stylelint-config-plus.git"
     },
     "dependencies": {
-        "postcss": "^8.4.20",
+        "postcss": "^8.4.21",
         "postcss-html": "^1.5.0",
         "postcss-scss": "^4.0.6",
-        "stylelint-config-recommended": "^9.0.0",
-        "stylelint-config-standard": "^29.0.0",
-        "stylelint-order": "^6.0.0",
+        "stylelint-config-recommended": "^10.0.1",
+        "stylelint-config-standard": "^30.0.1",
+        "stylelint-order": "^6.0.2",
         "stylelint-semantic-groups": "^1.2.0"
     },
     "devDependencies": {
-        "eslint": "^8.31.0",
-        "eslint-config-plus": "^1.0.5"
+        "eslint": "^8.33.0",
+        "eslint-config-plus": "^1.0.6"
     }
 }
