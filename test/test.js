@@ -21,6 +21,8 @@ const list = [{
 
 it('check list', async () => {
 
+    console.log('start style lint ...');
+
     for (const item of list) {
 
         const file = item.file;
@@ -40,7 +42,6 @@ it('check list', async () => {
         }).catch((err) => {
             console.error(err.stack);
         });
-
 
         const output = data.output;
 
