@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const assert = require('assert');
 const stylelint = require('stylelint');
+const EC = require('eight-colors');
 
 const stylelintConfig = require('../lib/index.js');
 
@@ -29,7 +30,7 @@ it('check list', async () => {
         const customSyntax = item.customSyntax;
 
         console.log('=============================================================================');
-        console.log(`checking ${file} ...`);
+        console.log(EC.cyan(`checking ${file} ...`));
         const input = fs.readFileSync(path.resolve(__dirname, `${file}.txt`)).toString('utf-8');
         const result = fs.readFileSync(path.resolve(__dirname, file)).toString('utf-8');
         // console.log(input);
@@ -46,7 +47,7 @@ it('check list', async () => {
         const output = data.output;
 
         console.log(output);
-        console.log(result);
+        console.log(EC.green(result));
 
         assert.equal(output, result);
 

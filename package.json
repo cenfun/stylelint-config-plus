@@ -4,6 +4,7 @@
     "description": "stylelint-config-plus",
     "main": "lib/index.js",
     "scripts": {
+        "build": "cls && node ./scripts/build.js",
         "test": "cls && npx mocha --bail"
     },
     "files": [
@@ -22,10 +23,11 @@
         "stylelint-semantic-groups": "^1.2.0"
     },
     "devDependencies": {
-        "eslint": "^8.33.0",
+        "eight-colors": "^1.0.2",
+        "eslint": "^8.34.0",
         "eslint-config-plus": "^1.0.6",
         "mocha": "^10.2.0",
-        "stylelint": "^15.0.0",
+        "stylelint": "^15.1.0",
         "stylelint-config-recommended": "^10.0.1",
         "stylelint-config-standard": "^30.0.1"
     }
