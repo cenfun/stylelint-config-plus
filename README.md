@@ -20,14 +20,14 @@ module.exports = {
 ```
 
 ## About Stylistic Rules
-Unfortunately, stylistic rules deprecated in stylelint v15 by Prettier
+Unfortunately, stylistic rules were deprecated in stylelint v15 by Prettier
 
 * https://github.com/stylelint/stylelint/pull/6504
 * https://stylelint.io/migration-guide/to-15#deprecated-stylistic-rules
 
 Don't know why but:
 
-* We don't need to use Prettier because StyleLint and Eslint have done a good job
+* We don't need to use Prettier because StyleLint and Eslint have done a good job in code formatter
 * We will never use Prettier because so many tools are loaded in the front-end development, conflicts and troubles are more and more
 
 So we need to resume use of stylistic rules in stylelint v15+
