@@ -1,3 +1,3 @@
-const plus = require("./lib/index.js");
+import plus from "./lib/index.js";
 
-module.exports = plus;
+export default plus;

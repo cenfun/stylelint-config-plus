@@ -1,10 +1,10 @@
-const fs = require('fs');
-const path = require('path');
-const assert = require('assert');
-const stylelint = require('stylelint');
-const EC = require('eight-colors');
+import fs from 'fs';
+import path from 'path';
+import assert from 'assert';
+import stylelint from 'stylelint';
+import EC from 'eight-colors';
 
-const stylelintConfig = require('../lib/index.js');
+import stylelintConfig from '../lib/index.js';
 
 const list = [{
     'file': 'style.css'
@@ -31,11 +31,14 @@ it('check list', async () => {
 
         console.log('=============================================================================');
         console.log(EC.cyan(`checking ${file} ...`));
-        const input = fs.readFileSync(path.resolve(__dirname, `${file}.txt`)).toString('utf-8');
-        const result = fs.readFileSync(path.resolve(__dirname, file)).toString('utf-8');
+        const input = fs.readFileSync(path.resolve('test', `${file}.txt`)).toString('utf-8');
+
+        console.log('input:');
+        console.log(JSON.stringify(input));
+
         // console.log(input);
 
-        const data = await stylelint.lint({
+        let data = await stylelint.lint({
             code: input,
             config: stylelintConfig,
             customSyntax: customSyntax,
@@ -44,13 +47,28 @@ it('check list', async () => {
             console.error(err.stack);
         });
 
-        const output = data.output;
+        data = await stylelint.lint({
+            code: data.code,
+            config: stylelintConfig,
+            customSyntax: customSyntax,
+            fix: true
+        }).catch((err) => {
+            console.error(err.stack);
+        });
 
-        console.log(output);
-        console.log(EC.green(result));
+        // console.log(data);
 
-        assert.equal(output, result);
+        const output = data.code;
+        console.log('output:');
+        console.log(JSON.stringify(output));
 
+        // assert.equal(code, result);
+        const check = fs.readFileSync(path.resolve('test', file)).toString('utf-8');
+
+        console.log('check:');
+        console.log(JSON.stringify(check));
+
+        assert(output === check);
     }
 
 });
