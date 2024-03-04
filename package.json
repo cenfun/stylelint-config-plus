@@ -5,7 +5,6 @@
     "type": "module",
     "main": "lib/index.js",
     "scripts": {
-        "build": "node ./scripts/build.js",
         "test": "npx mocha --bail",
         "patch": "npm run test && sf publish patch"
     },
