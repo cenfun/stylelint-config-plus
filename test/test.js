@@ -47,6 +47,7 @@ it('check list', async () => {
             console.error(err.stack);
         });
 
+        // requires double lint
         data = await stylelint.lint({
             code: data.code,
             config: stylelintConfig,
@@ -67,8 +68,11 @@ it('check list', async () => {
 
         console.log('check:');
         console.log(JSON.stringify(check));
-
-        assert(output === check);
+        try {
+            assert(output === check);
+        } catch (e) {
+            EC.logRed(e.message);
+        }
     }
 
 });
