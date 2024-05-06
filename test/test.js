@@ -1,79 +1,93 @@
 import fs from 'fs';
 import path from 'path';
-import assert from 'assert';
-import stylelint from 'stylelint';
 import EC from 'eight-colors';
+import { spawn } from 'child_process';
 
-import stylelintConfig from '../lib/index.js';
-
-const list = [{
-    'file': 'style.css'
-}, {
-    'file': 'style.scss',
-    'customSyntax': 'postcss-scss'
-}, {
-    'file': 'style.html',
-    'customSyntax': 'postcss-html'
-}, {
-    'file': 'style.vue',
-    'customSyntax': 'postcss-html'
-}];
-
-
-it('check list', async () => {
-
-    console.log('start style lint ...');
-
-    for (const item of list) {
-
-        const file = item.file;
-        const customSyntax = item.customSyntax;
-
-        console.log('=============================================================================');
-        console.log(EC.cyan(`checking ${file} ...`));
-        const input = fs.readFileSync(path.resolve('test', `${file}.txt`)).toString('utf-8');
-
-        console.log('input:');
-        console.log(JSON.stringify(input));
-
-        // console.log(input);
-
-        let data = await stylelint.lint({
-            code: input,
-            config: stylelintConfig,
-            customSyntax: customSyntax,
-            fix: true
-        }).catch((err) => {
-            console.error(err.stack);
+const sh = (cmd, options = {}) => {
+    return new Promise((resolve, reject) => {
+        const cp = spawn(cmd, {
+            shell: true,
+            stdio: 'inherit',
+            ... options
         });
-
-        // requires double lint
-        data = await stylelint.lint({
-            code: data.code,
-            config: stylelintConfig,
-            customSyntax: customSyntax,
-            fix: true
-        }).catch((err) => {
-            console.error(err.stack);
+        cp.on('error', (err) => {
+            reject(err);
         });
+        cp.on('close', () => {
+            resolve();
+        });
+        cp.on('exit', () => {
+            resolve();
+        });
+    });
+};
 
-        // console.log(data);
+const getStylelintCmd = function(stylelintFiles) {
+    // https://stylelint.io/
 
-        const output = data.code;
-        console.log('output:');
-        console.log(JSON.stringify(output));
+    const lintBin = 'npx stylelint';
+    // console.log(lintBin);
+    const params = [lintBin];
 
-        // assert.equal(code, result);
-        const check = fs.readFileSync(path.resolve('test', file)).toString('utf-8');
+    params.push(`"${stylelintFiles}"`);
+    params.push('--config stylelint.config.js');
+    params.push('--allow-empty-input');
+    params.push('--color');
+    params.push('--fix');
 
-        console.log('check:');
-        console.log(JSON.stringify(check));
-        try {
-            assert(output === check);
-        } catch (e) {
-            EC.logRed(e.message);
+    return params.join(' ');
+};
+
+const originalDir = path.resolve(import.meta.dirname, 'original');
+const snapshots = [];
+const list = fs.readdirSync(originalDir);
+for (const txtName of list) {
+    const filename = txtName.slice(0, -4);
+    // console.log(filename);
+    const savePath = path.resolve(import.meta.dirname, `formatted/${filename}`);
+    const readPath = path.resolve(originalDir, txtName);
+    fs.writeFileSync(savePath, fs.readFileSync(readPath));
+
+    const snapPath = path.resolve(import.meta.dirname, `snapshot/${filename}`);
+    snapshots.push({
+        snapPath,
+        savePath
+    });
+
+}
+
+const cmd = getStylelintCmd('test/formatted/*.*');
+console.log(cmd);
+
+it('style lint 1', async () => {
+    await sh(cmd);
+});
+
+it('style lint 2', async () => {
+    await sh(cmd);
+});
+
+it('check results', () => {
+
+    let hasError;
+    for (const item of snapshots) {
+
+        const { snapPath, savePath } = item;
+
+        const c1 = fs.readFileSync(snapPath).toString('utf-8');
+        const c2 = fs.readFileSync(savePath).toString('utf-8');
+
+        if (c1 !== c2) {
+            console.log('=========================================================');
+            EC.logCyan(c1);
+            EC.logRed(c2);
+            hasError = true;
         }
+
+    }
+
+    if (hasError) {
+        throw new Error('failed');
     }
 
 });
-
