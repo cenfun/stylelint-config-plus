@@ -10,6 +10,7 @@
 .my-class{width:10px;position:absolute;
     display:block;font-size:12px}
 </style>
+<div style="color:red;display:block; width:100%"></div>
 </body>
 
 </html>
