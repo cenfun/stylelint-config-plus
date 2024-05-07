@@ -130,7 +130,9 @@
             "standard": true,
             "value": [
                 "^([a-z][a-z0-9]*)(-[a-z0-9]+)*$",
-                {}
+                {
+                    "message": "(name) => `Expected custom media query name \"${name}\" to be kebab-case`"
+                }
             ]
         },
         "custom-property-empty-line-before": {
@@ -161,7 +163,9 @@
             "standard": true,
             "value": [
                 "^([a-z][a-z0-9]*)(-[a-z0-9]+)*$",
-                {}
+                {
+                    "message": "(name) => `Expected custom property name \"${name}\" to be kebab-case`"
+                }
             ]
         },
         "declaration-block-no-duplicate-custom-properties": {
@@ -333,7 +337,9 @@
             "standard": true,
             "value": [
                 "^([a-z][a-z0-9]*)(-[a-z0-9]+)*$",
-                {}
+                {
+                    "message": "(name) => `Expected keyframe name \"${name}\" to be kebab-case`"
+                }
             ]
         },
         "length-zero-no-unit": {
@@ -510,7 +516,9 @@
             "standard": true,
             "value": [
                 "^([a-z][a-z0-9]*)(-[a-z0-9]+)*$",
-                {}
+                {
+                    "message": "(selector) => `Expected class selector \"${selector}\" to be kebab-case`"
+                }
             ]
         },
         "selector-combinator-allowed-list": {
@@ -527,7 +535,9 @@
             "standard": true,
             "value": [
                 "^([a-z][a-z0-9]*)(-[a-z0-9]+)*$",
-                {}
+                {
+                    "message": "(selector) => `Expected id selector \"${selector}\" to be kebab-case`"
+                }
             ]
         },
         "selector-max-attribute": {

@@ -309,7 +309,12 @@ const start = async () => {
     };
 
     const rulesPath = path.resolve(import.meta.dirname, '../lib/metadata.json');
-    fs.writeFileSync(rulesPath, JSON.stringify(metadata, null, 4));
+    fs.writeFileSync(rulesPath, JSON.stringify(metadata, (key, value) => {
+        if (typeof value === 'function') {
+            return value.toString();
+        }
+        return value;
+    }, 4));
     EC.logGreen(`generated metadata: ${rulesPath}`);
 
     // =====================================================================================
