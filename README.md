@@ -3,8 +3,8 @@
 - [stylelint-config-recommended](https://github.com/stylelint/stylelint-config-recommended)
 - [stylelint-config-standard](https://github.com/stylelint/stylelint-config-standard)
 - [@stylistic/stylelint-plugin](https://www.npmjs.com/package/@stylistic/stylelint-plugin) 
-- [stylelint-config-html](https://www.npmjs.com/package/stylelint-config-html) (*.html and *.vue)
 - [stylelint-order](https://github.com/hudochenkov/stylelint-order) with [stylelint-semantic-groups](https://github.com/theKashey/stylelint-semantic-groups)
+- [stylelint-config-html](https://www.npmjs.com/package/stylelint-config-html) (*.html and *.vue)
 
 ## Install
 ```sh
@@ -224,8 +224,8 @@ Base on [stylelint@16.5.0](https://github.com/stylelint/stylelint) (2024/5/7)
 |189|[@stylistic/value-list-comma-space-after](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/value-list-comma-space-after/README.md)|🔧🎨|  ✔️ |`"always-single-line"`|
 |190|[@stylistic/value-list-comma-space-before](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/value-list-comma-space-before/README.md)|🔧🎨|  ✔️ |`"never"`|
 |191|[@stylistic/value-list-max-empty-lines](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/value-list-max-empty-lines/README.md)|🔧🎨|  ✔️ |`0`  |
-|192|[order/order](https://github.com/hudochenkov/stylelint-order/blob/master/rules/order/README.md)|🔧|  ✔️ |[order/order](https://github.com/theKashey/stylelint-semantic-groups/blob/main/src/rules-order.ts)|
-|193|[order/properties-order](https://github.com/hudochenkov/stylelint-order/blob/master/rules/properties-order/README.md)|🔧|  ✔️ |[order/properties-order](https://github.com/theKashey/stylelint-semantic-groups/blob/main/src/properties-order.ts)|
+|192|[order/order](https://github.com/hudochenkov/stylelint-order/blob/master/rules/order/README.md)|🔧|  ✔️ |see [order](https://github.com/theKashey/stylelint-semantic-groups/blob/main/src/rules-order.ts)|
+|193|[order/properties-order](https://github.com/hudochenkov/stylelint-order/blob/master/rules/properties-order/README.md)|🔧|  ✔️ |see [properties-order](https://github.com/theKashey/stylelint-semantic-groups/blob/main/src/properties-order.ts)|
 
 # Changelog
 [CHANGELOG.md](CHANGELOG.md)

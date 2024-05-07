@@ -287,7 +287,7 @@ const start = async () => {
 
     Object.keys(orderRules).forEach((key) => {
         const id = key.replace('order/', '');
-        const link = `[${key}](${links[key]})`;
+        const link = `see [${id}](${links[key]})`;
         rules[key] = {
             url: `https://github.com/hudochenkov/stylelint-order/blob/master/rules/${id}/README.md`,
             fixable: true,
