@@ -12,10 +12,14 @@ import { propertyOrdering, selectorOrdering } from 'stylelint-semantic-groups';
 import builtInRules from '../node_modules/stylelint/lib/rules/index.mjs';
 import myOverrideRules from '../lib/rules-override.js';
 
-const jsonToStr = (obj, indent = 4) => {
+const jsonToStr = (obj, indent = 4, replacement = null) => {
     return JSON.stringify(obj, (key, value) => {
         if (typeof value === 'function') {
-            return value.toString();
+            let s = value.toString();
+            if (replacement) {
+                s = replacement(s);
+            }
+            return s;
         }
         return value;
     }, indent);
@@ -123,7 +127,9 @@ const checkRules = (metadata) => {
             if (item.link) {
                 value = item.link;
             } else {
-                const str = jsonToStr(item.value, 0);
+                const str = jsonToStr(item.value, 0, (s) => {
+                    return s.replace(/`/g, '"');
+                });
                 value = `\`${str}\``;
                 if (value.length > 36) {
                     value = `<details><summary>Details</summary>${value}</details>`;

@@ -53,10 +53,10 @@ Base on [stylelint@16.5.0](https://github.com/stylelint/stylelint) (2024/5/7)
 | 18|[comment-pattern](https://stylelint.io/user-guide/rules/comment-pattern)|    |   ❌  |     |
 | 19|[comment-whitespace-inside](https://stylelint.io/user-guide/rules/comment-whitespace-inside)|✅🔧|  ✔️ |`"always"`|
 | 20|[comment-word-disallowed-list](https://stylelint.io/user-guide/rules/comment-word-disallowed-list)|    |   ❌  |     |
-| 21|[custom-media-pattern](https://stylelint.io/user-guide/rules/custom-media-pattern)|✅  |  ✔️ |<details><summary>Details</summary>`["^([a-z][a-z0-9]*)(-[a-z0-9]+)*$",{"message":"(name) => `Expected custom media query name \"${name}\" to be kebab-case`"}]`</details>|
+| 21|[custom-media-pattern](https://stylelint.io/user-guide/rules/custom-media-pattern)|✅  |  ✔️ |<details><summary>Details</summary>`["^([a-z][a-z0-9]*)(-[a-z0-9]+)*$",{"message":"(name) => \"Expected custom media query name \"${name}\" to be kebab-case\""}]`</details>|
 | 22|[custom-property-empty-line-before](https://stylelint.io/user-guide/rules/custom-property-empty-line-before)|✅🔧|  ✔️ |<details><summary>Details</summary>`["always",{"except":["after-custom-property","first-nested"],"ignore":["after-comment","inside-single-line-block"]}]`</details>|
 | 23|[custom-property-no-missing-var-function](https://stylelint.io/user-guide/rules/custom-property-no-missing-var-function)|✅  |  ✔️ |`true`|
-| 24|[custom-property-pattern](https://stylelint.io/user-guide/rules/custom-property-pattern)|✅  |  ✔️ |<details><summary>Details</summary>`["^([a-z][a-z0-9]*)(-[a-z0-9]+)*$",{"message":"(name) => `Expected custom property name \"${name}\" to be kebab-case`"}]`</details>|
+| 24|[custom-property-pattern](https://stylelint.io/user-guide/rules/custom-property-pattern)|✅  |  ✔️ |<details><summary>Details</summary>`["^([a-z][a-z0-9]*)(-[a-z0-9]+)*$",{"message":"(name) => \"Expected custom property name \"${name}\" to be kebab-case\""}]`</details>|
 | 25|[declaration-block-no-duplicate-custom-properties](https://stylelint.io/user-guide/rules/declaration-block-no-duplicate-custom-properties)|✅  |  ✔️ |`true`|
 | 26|[declaration-block-no-duplicate-properties](https://stylelint.io/user-guide/rules/declaration-block-no-duplicate-properties)|✅🔧|  ✔️ |<details><summary>Details</summary>`[true,{"ignore":["consecutive-duplicates-with-different-syntaxes"]}]`</details>|
 | 27|[declaration-block-no-redundant-longhand-properties](https://stylelint.io/user-guide/rules/declaration-block-no-redundant-longhand-properties)|✅🔧|  ✔️ |`true`|
@@ -89,7 +89,7 @@ Base on [stylelint@16.5.0](https://github.com/stylelint/stylelint) (2024/5/7)
 | 54|[keyframe-block-no-duplicate-selectors](https://stylelint.io/user-guide/rules/keyframe-block-no-duplicate-selectors)|✅  |  ✔️ |`true`|
 | 55|[keyframe-declaration-no-important](https://stylelint.io/user-guide/rules/keyframe-declaration-no-important)|✅  |  ✔️ |`true`|
 | 56|[keyframe-selector-notation](https://stylelint.io/user-guide/rules/keyframe-selector-notation)|✅🔧|  ✔️ |<details><summary>Details</summary>`"percentage-unless-within-keyword-only-block"`</details>|
-| 57|[keyframes-name-pattern](https://stylelint.io/user-guide/rules/keyframes-name-pattern)|✅  |  ✔️ |<details><summary>Details</summary>`["^([a-z][a-z0-9]*)(-[a-z0-9]+)*$",{"message":"(name) => `Expected keyframe name \"${name}\" to be kebab-case`"}]`</details>|
+| 57|[keyframes-name-pattern](https://stylelint.io/user-guide/rules/keyframes-name-pattern)|✅  |  ✔️ |<details><summary>Details</summary>`["^([a-z][a-z0-9]*)(-[a-z0-9]+)*$",{"message":"(name) => \"Expected keyframe name \"${name}\" to be kebab-case\""}]`</details>|
 | 58|[length-zero-no-unit](https://stylelint.io/user-guide/rules/length-zero-no-unit)|✅🔧|  ✔️ |<details><summary>Details</summary>`[true,{"ignore":["custom-properties"]}]`</details>|
 | 59|[lightness-notation](https://stylelint.io/user-guide/rules/lightness-notation)|✅🔧|  ✔️ |`"percentage"`|
 | 60|[max-nesting-depth](https://stylelint.io/user-guide/rules/max-nesting-depth)|    |   ❌  |     |
@@ -125,11 +125,11 @@ Base on [stylelint@16.5.0](https://github.com/stylelint/stylelint) (2024/5/7)
 | 90|[selector-attribute-operator-allowed-list](https://stylelint.io/user-guide/rules/selector-attribute-operator-allowed-list)|    |   ❌  |     |
 | 91|[selector-attribute-operator-disallowed-list](https://stylelint.io/user-guide/rules/selector-attribute-operator-disallowed-list)|    |   ❌  |     |
 | 92|[selector-attribute-quotes](https://stylelint.io/user-guide/rules/selector-attribute-quotes)|✅🔧|  ✔️ |`"always"`|
-| 93|[selector-class-pattern](https://stylelint.io/user-guide/rules/selector-class-pattern)|✅  |  ✔️ |<details><summary>Details</summary>`["^([a-z][a-z0-9]*)(-[a-z0-9]+)*$",{"message":"(selector) => `Expected class selector \"${selector}\" to be kebab-case`"}]`</details>|
+| 93|[selector-class-pattern](https://stylelint.io/user-guide/rules/selector-class-pattern)|✅  |  ✔️ |<details><summary>Details</summary>`["^([a-z][a-z0-9]*)(-[a-z0-9]+)*$",{"message":"(selector) => \"Expected class selector \"${selector}\" to be kebab-case\""}]`</details>|
 | 94|[selector-combinator-allowed-list](https://stylelint.io/user-guide/rules/selector-combinator-allowed-list)|    |   ❌  |     |
 | 95|[selector-combinator-disallowed-list](https://stylelint.io/user-guide/rules/selector-combinator-disallowed-list)|    |   ❌  |     |
 | 96|[selector-disallowed-list](https://stylelint.io/user-guide/rules/selector-disallowed-list)|    |   ❌  |     |
-| 97|[selector-id-pattern](https://stylelint.io/user-guide/rules/selector-id-pattern)|✅  |  ✔️ |<details><summary>Details</summary>`["^([a-z][a-z0-9]*)(-[a-z0-9]+)*$",{"message":"(selector) => `Expected id selector \"${selector}\" to be kebab-case`"}]`</details>|
+| 97|[selector-id-pattern](https://stylelint.io/user-guide/rules/selector-id-pattern)|✅  |  ✔️ |<details><summary>Details</summary>`["^([a-z][a-z0-9]*)(-[a-z0-9]+)*$",{"message":"(selector) => \"Expected id selector \"${selector}\" to be kebab-case\""}]`</details>|
 | 98|[selector-max-attribute](https://stylelint.io/user-guide/rules/selector-max-attribute)|    |   ❌  |     |
 | 99|[selector-max-class](https://stylelint.io/user-guide/rules/selector-max-class)|    |   ❌  |     |
 |100|[selector-max-combinators](https://stylelint.io/user-guide/rules/selector-max-combinators)|    |   ❌  |     |
