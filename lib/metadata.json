@@ -1,0 +1,1061 @@
+{
+    "version": "16.5.0",
+    "date": "2024/5/7",
+    "rules": {
+        "alpha-value-notation": {
+            "url": "https://stylelint.io/user-guide/rules/alpha-value-notation",
+            "fixable": true,
+            "standard": true,
+            "value": [
+                "percentage",
+                {
+                    "exceptProperties": [
+                        "opacity",
+                        "fill-opacity",
+                        "flood-opacity",
+                        "stop-opacity",
+                        "stroke-opacity"
+                    ]
+                }
+            ]
+        },
+        "annotation-no-unknown": {
+            "url": "https://stylelint.io/user-guide/rules/annotation-no-unknown",
+            "recommended": true,
+            "value": true
+        },
+        "at-rule-allowed-list": {
+            "url": "https://stylelint.io/user-guide/rules/at-rule-allowed-list"
+        },
+        "at-rule-disallowed-list": {
+            "url": "https://stylelint.io/user-guide/rules/at-rule-disallowed-list"
+        },
+        "at-rule-empty-line-before": {
+            "url": "https://stylelint.io/user-guide/rules/at-rule-empty-line-before",
+            "fixable": true,
+            "standard": true,
+            "value": [
+                "always",
+                {
+                    "except": [
+                        "blockless-after-same-name-blockless",
+                        "first-nested"
+                    ],
+                    "ignore": [
+                        "after-comment"
+                    ]
+                }
+            ]
+        },
+        "at-rule-no-unknown": {
+            "url": "https://stylelint.io/user-guide/rules/at-rule-no-unknown",
+            "recommended": true,
+            "value": true
+        },
+        "at-rule-no-vendor-prefix": {
+            "url": "https://stylelint.io/user-guide/rules/at-rule-no-vendor-prefix",
+            "fixable": true,
+            "standard": true,
+            "value": true
+        },
+        "at-rule-property-required-list": {
+            "url": "https://stylelint.io/user-guide/rules/at-rule-property-required-list"
+        },
+        "block-no-empty": {
+            "url": "https://stylelint.io/user-guide/rules/block-no-empty",
+            "recommended": true,
+            "value": true
+        },
+        "color-function-notation": {
+            "url": "https://stylelint.io/user-guide/rules/color-function-notation",
+            "fixable": true,
+            "standard": true,
+            "value": "modern"
+        },
+        "color-hex-alpha": {
+            "url": "https://stylelint.io/user-guide/rules/color-hex-alpha"
+        },
+        "color-hex-length": {
+            "url": "https://stylelint.io/user-guide/rules/color-hex-length",
+            "fixable": true,
+            "standard": true,
+            "value": "short"
+        },
+        "color-named": {
+            "url": "https://stylelint.io/user-guide/rules/color-named"
+        },
+        "color-no-hex": {
+            "url": "https://stylelint.io/user-guide/rules/color-no-hex"
+        },
+        "color-no-invalid-hex": {
+            "url": "https://stylelint.io/user-guide/rules/color-no-invalid-hex",
+            "recommended": true,
+            "value": true
+        },
+        "comment-empty-line-before": {
+            "url": "https://stylelint.io/user-guide/rules/comment-empty-line-before",
+            "fixable": true,
+            "standard": true,
+            "value": [
+                "always",
+                {
+                    "except": [
+                        "first-nested"
+                    ],
+                    "ignore": [
+                        "stylelint-commands"
+                    ]
+                }
+            ]
+        },
+        "comment-no-empty": {
+            "url": "https://stylelint.io/user-guide/rules/comment-no-empty",
+            "recommended": true,
+            "value": true
+        },
+        "comment-pattern": {
+            "url": "https://stylelint.io/user-guide/rules/comment-pattern"
+        },
+        "comment-whitespace-inside": {
+            "url": "https://stylelint.io/user-guide/rules/comment-whitespace-inside",
+            "fixable": true,
+            "standard": true,
+            "value": "always"
+        },
+        "comment-word-disallowed-list": {
+            "url": "https://stylelint.io/user-guide/rules/comment-word-disallowed-list"
+        },
+        "custom-media-pattern": {
+            "url": "https://stylelint.io/user-guide/rules/custom-media-pattern",
+            "standard": true,
+            "value": [
+                "^([a-z][a-z0-9]*)(-[a-z0-9]+)*$",
+                {}
+            ]
+        },
+        "custom-property-empty-line-before": {
+            "url": "https://stylelint.io/user-guide/rules/custom-property-empty-line-before",
+            "fixable": true,
+            "standard": true,
+            "value": [
+                "always",
+                {
+                    "except": [
+                        "after-custom-property",
+                        "first-nested"
+                    ],
+                    "ignore": [
+                        "after-comment",
+                        "inside-single-line-block"
+                    ]
+                }
+            ]
+        },
+        "custom-property-no-missing-var-function": {
+            "url": "https://stylelint.io/user-guide/rules/custom-property-no-missing-var-function",
+            "recommended": true,
+            "value": true
+        },
+        "custom-property-pattern": {
+            "url": "https://stylelint.io/user-guide/rules/custom-property-pattern",
+            "standard": true,
+            "value": [
+                "^([a-z][a-z0-9]*)(-[a-z0-9]+)*$",
+                {}
+            ]
+        },
+        "declaration-block-no-duplicate-custom-properties": {
+            "url": "https://stylelint.io/user-guide/rules/declaration-block-no-duplicate-custom-properties",
+            "recommended": true,
+            "value": true
+        },
+        "declaration-block-no-duplicate-properties": {
+            "url": "https://stylelint.io/user-guide/rules/declaration-block-no-duplicate-properties",
+            "fixable": true,
+            "recommended": true,
+            "value": [
+                true,
+                {
+                    "ignore": [
+                        "consecutive-duplicates-with-different-syntaxes"
+                    ]
+                }
+            ]
+        },
+        "declaration-block-no-redundant-longhand-properties": {
+            "url": "https://stylelint.io/user-guide/rules/declaration-block-no-redundant-longhand-properties",
+            "fixable": true,
+            "standard": true,
+            "value": true
+        },
+        "declaration-block-no-shorthand-property-overrides": {
+            "url": "https://stylelint.io/user-guide/rules/declaration-block-no-shorthand-property-overrides",
+            "recommended": true,
+            "value": true
+        },
+        "declaration-block-single-line-max-declarations": {
+            "url": "https://stylelint.io/user-guide/rules/declaration-block-single-line-max-declarations",
+            "standard": true,
+            "value": 1
+        },
+        "declaration-empty-line-before": {
+            "url": "https://stylelint.io/user-guide/rules/declaration-empty-line-before",
+            "fixable": true,
+            "standard": true,
+            "value": [
+                "always",
+                {
+                    "except": [
+                        "after-declaration",
+                        "first-nested"
+                    ],
+                    "ignore": [
+                        "after-comment",
+                        "inside-single-line-block"
+                    ]
+                }
+            ]
+        },
+        "declaration-no-important": {
+            "url": "https://stylelint.io/user-guide/rules/declaration-no-important"
+        },
+        "declaration-property-max-values": {
+            "url": "https://stylelint.io/user-guide/rules/declaration-property-max-values"
+        },
+        "declaration-property-unit-allowed-list": {
+            "url": "https://stylelint.io/user-guide/rules/declaration-property-unit-allowed-list"
+        },
+        "declaration-property-unit-disallowed-list": {
+            "url": "https://stylelint.io/user-guide/rules/declaration-property-unit-disallowed-list"
+        },
+        "declaration-property-value-allowed-list": {
+            "url": "https://stylelint.io/user-guide/rules/declaration-property-value-allowed-list"
+        },
+        "declaration-property-value-disallowed-list": {
+            "url": "https://stylelint.io/user-guide/rules/declaration-property-value-disallowed-list"
+        },
+        "declaration-property-value-no-unknown": {
+            "url": "https://stylelint.io/user-guide/rules/declaration-property-value-no-unknown"
+        },
+        "font-family-name-quotes": {
+            "url": "https://stylelint.io/user-guide/rules/font-family-name-quotes",
+            "fixable": true,
+            "standard": true,
+            "value": "always-where-recommended"
+        },
+        "font-family-no-duplicate-names": {
+            "url": "https://stylelint.io/user-guide/rules/font-family-no-duplicate-names",
+            "recommended": true,
+            "value": true
+        },
+        "font-family-no-missing-generic-family-keyword": {
+            "url": "https://stylelint.io/user-guide/rules/font-family-no-missing-generic-family-keyword",
+            "recommended": true,
+            "value": true
+        },
+        "font-weight-notation": {
+            "url": "https://stylelint.io/user-guide/rules/font-weight-notation",
+            "fixable": true
+        },
+        "function-allowed-list": {
+            "url": "https://stylelint.io/user-guide/rules/function-allowed-list"
+        },
+        "function-calc-no-unspaced-operator": {
+            "url": "https://stylelint.io/user-guide/rules/function-calc-no-unspaced-operator",
+            "fixable": true,
+            "recommended": true,
+            "value": true
+        },
+        "function-disallowed-list": {
+            "url": "https://stylelint.io/user-guide/rules/function-disallowed-list"
+        },
+        "function-linear-gradient-no-nonstandard-direction": {
+            "url": "https://stylelint.io/user-guide/rules/function-linear-gradient-no-nonstandard-direction",
+            "recommended": true,
+            "value": true
+        },
+        "function-name-case": {
+            "url": "https://stylelint.io/user-guide/rules/function-name-case",
+            "fixable": true,
+            "standard": true,
+            "value": "lower"
+        },
+        "function-no-unknown": {
+            "url": "https://stylelint.io/user-guide/rules/function-no-unknown",
+            "recommended": true,
+            "value": true
+        },
+        "function-url-no-scheme-relative": {
+            "url": "https://stylelint.io/user-guide/rules/function-url-no-scheme-relative"
+        },
+        "function-url-quotes": {
+            "url": "https://stylelint.io/user-guide/rules/function-url-quotes",
+            "fixable": true,
+            "standard": true,
+            "value": "always"
+        },
+        "function-url-scheme-allowed-list": {
+            "url": "https://stylelint.io/user-guide/rules/function-url-scheme-allowed-list"
+        },
+        "function-url-scheme-disallowed-list": {
+            "url": "https://stylelint.io/user-guide/rules/function-url-scheme-disallowed-list"
+        },
+        "hue-degree-notation": {
+            "url": "https://stylelint.io/user-guide/rules/hue-degree-notation",
+            "fixable": true,
+            "standard": true,
+            "value": "angle"
+        },
+        "import-notation": {
+            "url": "https://stylelint.io/user-guide/rules/import-notation",
+            "fixable": true,
+            "standard": true,
+            "value": "url"
+        },
+        "keyframe-block-no-duplicate-selectors": {
+            "url": "https://stylelint.io/user-guide/rules/keyframe-block-no-duplicate-selectors",
+            "recommended": true,
+            "value": true
+        },
+        "keyframe-declaration-no-important": {
+            "url": "https://stylelint.io/user-guide/rules/keyframe-declaration-no-important",
+            "recommended": true,
+            "value": true
+        },
+        "keyframe-selector-notation": {
+            "url": "https://stylelint.io/user-guide/rules/keyframe-selector-notation",
+            "fixable": true,
+            "standard": true,
+            "value": "percentage-unless-within-keyword-only-block"
+        },
+        "keyframes-name-pattern": {
+            "url": "https://stylelint.io/user-guide/rules/keyframes-name-pattern",
+            "standard": true,
+            "value": [
+                "^([a-z][a-z0-9]*)(-[a-z0-9]+)*$",
+                {}
+            ]
+        },
+        "length-zero-no-unit": {
+            "url": "https://stylelint.io/user-guide/rules/length-zero-no-unit",
+            "fixable": true,
+            "standard": true,
+            "value": [
+                true,
+                {
+                    "ignore": [
+                        "custom-properties"
+                    ]
+                }
+            ]
+        },
+        "lightness-notation": {
+            "url": "https://stylelint.io/user-guide/rules/lightness-notation",
+            "fixable": true,
+            "standard": true,
+            "value": "percentage"
+        },
+        "max-nesting-depth": {
+            "url": "https://stylelint.io/user-guide/rules/max-nesting-depth"
+        },
+        "media-feature-name-allowed-list": {
+            "url": "https://stylelint.io/user-guide/rules/media-feature-name-allowed-list"
+        },
+        "media-feature-name-disallowed-list": {
+            "url": "https://stylelint.io/user-guide/rules/media-feature-name-disallowed-list"
+        },
+        "media-feature-name-no-unknown": {
+            "url": "https://stylelint.io/user-guide/rules/media-feature-name-no-unknown",
+            "recommended": true,
+            "value": true
+        },
+        "media-feature-name-no-vendor-prefix": {
+            "url": "https://stylelint.io/user-guide/rules/media-feature-name-no-vendor-prefix",
+            "fixable": true,
+            "standard": true,
+            "value": true
+        },
+        "media-feature-name-unit-allowed-list": {
+            "url": "https://stylelint.io/user-guide/rules/media-feature-name-unit-allowed-list"
+        },
+        "media-feature-name-value-allowed-list": {
+            "url": "https://stylelint.io/user-guide/rules/media-feature-name-value-allowed-list"
+        },
+        "media-feature-name-value-no-unknown": {
+            "url": "https://stylelint.io/user-guide/rules/media-feature-name-value-no-unknown"
+        },
+        "media-feature-range-notation": {
+            "url": "https://stylelint.io/user-guide/rules/media-feature-range-notation",
+            "fixable": true,
+            "standard": true,
+            "value": "context"
+        },
+        "media-query-no-invalid": {
+            "url": "https://stylelint.io/user-guide/rules/media-query-no-invalid",
+            "recommended": true,
+            "value": true
+        },
+        "named-grid-areas-no-invalid": {
+            "url": "https://stylelint.io/user-guide/rules/named-grid-areas-no-invalid",
+            "recommended": true,
+            "value": true
+        },
+        "no-descending-specificity": {
+            "url": "https://stylelint.io/user-guide/rules/no-descending-specificity",
+            "recommended": true,
+            "value": true
+        },
+        "no-duplicate-at-import-rules": {
+            "url": "https://stylelint.io/user-guide/rules/no-duplicate-at-import-rules",
+            "recommended": true,
+            "value": true
+        },
+        "no-duplicate-selectors": {
+            "url": "https://stylelint.io/user-guide/rules/no-duplicate-selectors",
+            "recommended": true,
+            "value": true
+        },
+        "no-empty-source": {
+            "url": "https://stylelint.io/user-guide/rules/no-empty-source",
+            "recommended": true,
+            "value": true
+        },
+        "no-invalid-double-slash-comments": {
+            "url": "https://stylelint.io/user-guide/rules/no-invalid-double-slash-comments",
+            "recommended": true,
+            "value": true
+        },
+        "no-invalid-position-at-import-rule": {
+            "url": "https://stylelint.io/user-guide/rules/no-invalid-position-at-import-rule",
+            "recommended": true,
+            "value": true
+        },
+        "no-irregular-whitespace": {
+            "url": "https://stylelint.io/user-guide/rules/no-irregular-whitespace",
+            "recommended": true,
+            "value": true
+        },
+        "no-unknown-animations": {
+            "url": "https://stylelint.io/user-guide/rules/no-unknown-animations"
+        },
+        "no-unknown-custom-media": {
+            "url": "https://stylelint.io/user-guide/rules/no-unknown-custom-media"
+        },
+        "no-unknown-custom-properties": {
+            "url": "https://stylelint.io/user-guide/rules/no-unknown-custom-properties"
+        },
+        "number-max-precision": {
+            "url": "https://stylelint.io/user-guide/rules/number-max-precision",
+            "standard": true,
+            "value": 4
+        },
+        "property-allowed-list": {
+            "url": "https://stylelint.io/user-guide/rules/property-allowed-list"
+        },
+        "property-disallowed-list": {
+            "url": "https://stylelint.io/user-guide/rules/property-disallowed-list"
+        },
+        "property-no-unknown": {
+            "url": "https://stylelint.io/user-guide/rules/property-no-unknown",
+            "recommended": true,
+            "value": true
+        },
+        "property-no-vendor-prefix": {
+            "url": "https://stylelint.io/user-guide/rules/property-no-vendor-prefix",
+            "fixable": true,
+            "standard": true,
+            "value": true
+        },
+        "rule-empty-line-before": {
+            "url": "https://stylelint.io/user-guide/rules/rule-empty-line-before",
+            "fixable": true,
+            "standard": true,
+            "value": [
+                "always-multi-line",
+                {
+                    "except": [
+                        "first-nested"
+                    ],
+                    "ignore": [
+                        "after-comment"
+                    ]
+                }
+            ]
+        },
+        "rule-selector-property-disallowed-list": {
+            "url": "https://stylelint.io/user-guide/rules/rule-selector-property-disallowed-list"
+        },
+        "selector-anb-no-unmatchable": {
+            "url": "https://stylelint.io/user-guide/rules/selector-anb-no-unmatchable",
+            "recommended": true,
+            "value": true
+        },
+        "selector-attribute-name-disallowed-list": {
+            "url": "https://stylelint.io/user-guide/rules/selector-attribute-name-disallowed-list"
+        },
+        "selector-attribute-operator-allowed-list": {
+            "url": "https://stylelint.io/user-guide/rules/selector-attribute-operator-allowed-list"
+        },
+        "selector-attribute-operator-disallowed-list": {
+            "url": "https://stylelint.io/user-guide/rules/selector-attribute-operator-disallowed-list"
+        },
+        "selector-attribute-quotes": {
+            "url": "https://stylelint.io/user-guide/rules/selector-attribute-quotes",
+            "fixable": true,
+            "standard": true,
+            "value": "always"
+        },
+        "selector-class-pattern": {
+            "url": "https://stylelint.io/user-guide/rules/selector-class-pattern",
+            "standard": true,
+            "value": [
+                "^([a-z][a-z0-9]*)(-[a-z0-9]+)*$",
+                {}
+            ]
+        },
+        "selector-combinator-allowed-list": {
+            "url": "https://stylelint.io/user-guide/rules/selector-combinator-allowed-list"
+        },
+        "selector-combinator-disallowed-list": {
+            "url": "https://stylelint.io/user-guide/rules/selector-combinator-disallowed-list"
+        },
+        "selector-disallowed-list": {
+            "url": "https://stylelint.io/user-guide/rules/selector-disallowed-list"
+        },
+        "selector-id-pattern": {
+            "url": "https://stylelint.io/user-guide/rules/selector-id-pattern",
+            "standard": true,
+            "value": [
+                "^([a-z][a-z0-9]*)(-[a-z0-9]+)*$",
+                {}
+            ]
+        },
+        "selector-max-attribute": {
+            "url": "https://stylelint.io/user-guide/rules/selector-max-attribute"
+        },
+        "selector-max-class": {
+            "url": "https://stylelint.io/user-guide/rules/selector-max-class"
+        },
+        "selector-max-combinators": {
+            "url": "https://stylelint.io/user-guide/rules/selector-max-combinators"
+        },
+        "selector-max-compound-selectors": {
+            "url": "https://stylelint.io/user-guide/rules/selector-max-compound-selectors"
+        },
+        "selector-max-id": {
+            "url": "https://stylelint.io/user-guide/rules/selector-max-id"
+        },
+        "selector-max-pseudo-class": {
+            "url": "https://stylelint.io/user-guide/rules/selector-max-pseudo-class"
+        },
+        "selector-max-specificity": {
+            "url": "https://stylelint.io/user-guide/rules/selector-max-specificity"
+        },
+        "selector-max-type": {
+            "url": "https://stylelint.io/user-guide/rules/selector-max-type"
+        },
+        "selector-max-universal": {
+            "url": "https://stylelint.io/user-guide/rules/selector-max-universal"
+        },
+        "selector-nested-pattern": {
+            "url": "https://stylelint.io/user-guide/rules/selector-nested-pattern"
+        },
+        "selector-no-qualifying-type": {
+            "url": "https://stylelint.io/user-guide/rules/selector-no-qualifying-type"
+        },
+        "selector-no-vendor-prefix": {
+            "url": "https://stylelint.io/user-guide/rules/selector-no-vendor-prefix",
+            "fixable": true,
+            "standard": true,
+            "value": true
+        },
+        "selector-not-notation": {
+            "url": "https://stylelint.io/user-guide/rules/selector-not-notation",
+            "fixable": true,
+            "standard": true,
+            "value": "complex"
+        },
+        "selector-pseudo-class-allowed-list": {
+            "url": "https://stylelint.io/user-guide/rules/selector-pseudo-class-allowed-list"
+        },
+        "selector-pseudo-class-disallowed-list": {
+            "url": "https://stylelint.io/user-guide/rules/selector-pseudo-class-disallowed-list"
+        },
+        "selector-pseudo-class-no-unknown": {
+            "url": "https://stylelint.io/user-guide/rules/selector-pseudo-class-no-unknown",
+            "recommended": true,
+            "value": true
+        },
+        "selector-pseudo-element-allowed-list": {
+            "url": "https://stylelint.io/user-guide/rules/selector-pseudo-element-allowed-list"
+        },
+        "selector-pseudo-element-colon-notation": {
+            "url": "https://stylelint.io/user-guide/rules/selector-pseudo-element-colon-notation",
+            "fixable": true,
+            "standard": true,
+            "value": "double"
+        },
+        "selector-pseudo-element-disallowed-list": {
+            "url": "https://stylelint.io/user-guide/rules/selector-pseudo-element-disallowed-list"
+        },
+        "selector-pseudo-element-no-unknown": {
+            "url": "https://stylelint.io/user-guide/rules/selector-pseudo-element-no-unknown",
+            "recommended": true,
+            "value": true
+        },
+        "selector-type-case": {
+            "url": "https://stylelint.io/user-guide/rules/selector-type-case",
+            "fixable": true,
+            "standard": true,
+            "value": "lower"
+        },
+        "selector-type-no-unknown": {
+            "url": "https://stylelint.io/user-guide/rules/selector-type-no-unknown",
+            "recommended": true,
+            "value": [
+                true,
+                {
+                    "ignore": [
+                        "custom-elements"
+                    ]
+                }
+            ]
+        },
+        "shorthand-property-no-redundant-values": {
+            "url": "https://stylelint.io/user-guide/rules/shorthand-property-no-redundant-values",
+            "fixable": true,
+            "standard": true,
+            "value": true
+        },
+        "string-no-newline": {
+            "url": "https://stylelint.io/user-guide/rules/string-no-newline",
+            "recommended": true,
+            "value": true
+        },
+        "time-min-milliseconds": {
+            "url": "https://stylelint.io/user-guide/rules/time-min-milliseconds"
+        },
+        "unit-allowed-list": {
+            "url": "https://stylelint.io/user-guide/rules/unit-allowed-list"
+        },
+        "unit-disallowed-list": {
+            "url": "https://stylelint.io/user-guide/rules/unit-disallowed-list"
+        },
+        "unit-no-unknown": {
+            "url": "https://stylelint.io/user-guide/rules/unit-no-unknown",
+            "recommended": true,
+            "value": true
+        },
+        "value-keyword-case": {
+            "url": "https://stylelint.io/user-guide/rules/value-keyword-case",
+            "fixable": true,
+            "standard": true,
+            "value": "lower"
+        },
+        "value-no-vendor-prefix": {
+            "url": "https://stylelint.io/user-guide/rules/value-no-vendor-prefix",
+            "fixable": true,
+            "standard": true,
+            "value": [
+                true,
+                {
+                    "ignoreValues": [
+                        "box",
+                        "inline-box"
+                    ]
+                }
+            ]
+        },
+        "@stylistic/at-rule-name-case": {
+            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/at-rule-name-case/README.md",
+            "fixable": true,
+            "stylistic": true,
+            "value": "lower"
+        },
+        "@stylistic/at-rule-name-space-after": {
+            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/at-rule-name-space-after/README.md",
+            "fixable": true,
+            "stylistic": true,
+            "value": "always-single-line"
+        },
+        "@stylistic/at-rule-semicolon-newline-after": {
+            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/at-rule-semicolon-newline-after/README.md",
+            "fixable": true,
+            "stylistic": true,
+            "value": "always"
+        },
+        "@stylistic/block-closing-brace-empty-line-before": {
+            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/block-closing-brace-empty-line-before/README.md",
+            "fixable": true,
+            "stylistic": true,
+            "value": "never"
+        },
+        "@stylistic/block-closing-brace-newline-after": {
+            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/block-closing-brace-newline-after/README.md",
+            "fixable": true,
+            "stylistic": true,
+            "value": "always"
+        },
+        "@stylistic/block-closing-brace-newline-before": {
+            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/block-closing-brace-newline-before/README.md",
+            "fixable": true,
+            "stylistic": true,
+            "value": "always-multi-line"
+        },
+        "@stylistic/block-closing-brace-space-before": {
+            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/block-closing-brace-space-before/README.md",
+            "fixable": true,
+            "stylistic": true,
+            "value": "always-single-line"
+        },
+        "@stylistic/block-opening-brace-newline-after": {
+            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/block-opening-brace-newline-after/README.md",
+            "fixable": true,
+            "stylistic": true,
+            "value": "always-multi-line"
+        },
+        "@stylistic/block-opening-brace-space-after": {
+            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/block-opening-brace-space-after/README.md",
+            "fixable": true,
+            "stylistic": true,
+            "value": "always-single-line"
+        },
+        "@stylistic/block-opening-brace-space-before": {
+            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/block-opening-brace-space-before/README.md",
+            "fixable": true,
+            "stylistic": true,
+            "value": "always"
+        },
+        "@stylistic/color-hex-case": {
+            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/color-hex-case/README.md",
+            "fixable": true,
+            "stylistic": true,
+            "value": "lower"
+        },
+        "@stylistic/declaration-bang-space-after": {
+            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/declaration-bang-space-after/README.md",
+            "fixable": true,
+            "stylistic": true,
+            "value": "never"
+        },
+        "@stylistic/declaration-bang-space-before": {
+            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/declaration-bang-space-before/README.md",
+            "fixable": true,
+            "stylistic": true,
+            "value": "always"
+        },
+        "@stylistic/declaration-block-semicolon-newline-after": {
+            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/declaration-block-semicolon-newline-after/README.md",
+            "fixable": true,
+            "stylistic": true,
+            "value": "always-multi-line"
+        },
+        "@stylistic/declaration-block-semicolon-space-after": {
+            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/declaration-block-semicolon-space-after/README.md",
+            "fixable": true,
+            "stylistic": true,
+            "value": "always-single-line"
+        },
+        "@stylistic/declaration-block-semicolon-space-before": {
+            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/declaration-block-semicolon-space-before/README.md",
+            "fixable": true,
+            "stylistic": true,
+            "value": "never"
+        },
+        "@stylistic/declaration-block-trailing-semicolon": {
+            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/declaration-block-trailing-semicolon/README.md",
+            "fixable": true,
+            "stylistic": true,
+            "value": "always"
+        },
+        "@stylistic/declaration-colon-newline-after": {
+            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/declaration-colon-newline-after/README.md",
+            "fixable": true,
+            "stylistic": true,
+            "value": "always-multi-line"
+        },
+        "@stylistic/declaration-colon-space-after": {
+            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/declaration-colon-space-after/README.md",
+            "fixable": true,
+            "stylistic": true,
+            "value": "always-single-line"
+        },
+        "@stylistic/declaration-colon-space-before": {
+            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/declaration-colon-space-before/README.md",
+            "fixable": true,
+            "stylistic": true,
+            "value": "never"
+        },
+        "@stylistic/function-comma-newline-after": {
+            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/function-comma-newline-after/README.md",
+            "fixable": true,
+            "stylistic": true,
+            "value": "always-multi-line"
+        },
+        "@stylistic/function-comma-space-after": {
+            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/function-comma-space-after/README.md",
+            "fixable": true,
+            "stylistic": true,
+            "value": "always-single-line"
+        },
+        "@stylistic/function-comma-space-before": {
+            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/function-comma-space-before/README.md",
+            "fixable": true,
+            "stylistic": true,
+            "value": "never"
+        },
+        "@stylistic/function-max-empty-lines": {
+            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/function-max-empty-lines/README.md",
+            "fixable": true,
+            "stylistic": true,
+            "value": 0
+        },
+        "@stylistic/function-parentheses-newline-inside": {
+            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/function-parentheses-newline-inside/README.md",
+            "fixable": true,
+            "stylistic": true,
+            "value": "always-multi-line"
+        },
+        "@stylistic/function-parentheses-space-inside": {
+            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/function-parentheses-space-inside/README.md",
+            "fixable": true,
+            "stylistic": true,
+            "value": "never-single-line"
+        },
+        "@stylistic/function-whitespace-after": {
+            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/function-whitespace-after/README.md",
+            "fixable": true,
+            "stylistic": true,
+            "value": "always"
+        },
+        "@stylistic/indentation": {
+            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/indentation/README.md",
+            "fixable": true,
+            "stylistic": true,
+            "value": 2
+        },
+        "@stylistic/max-empty-lines": {
+            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/max-empty-lines/README.md",
+            "fixable": true,
+            "stylistic": true,
+            "value": 1
+        },
+        "@stylistic/max-line-length": {
+            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/max-line-length/README.md",
+            "stylistic": true,
+            "value": 120
+        },
+        "@stylistic/media-feature-colon-space-after": {
+            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/media-feature-colon-space-after/README.md",
+            "fixable": true,
+            "stylistic": true,
+            "value": "always"
+        },
+        "@stylistic/media-feature-colon-space-before": {
+            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/media-feature-colon-space-before/README.md",
+            "fixable": true,
+            "stylistic": true,
+            "value": "never"
+        },
+        "@stylistic/media-feature-name-case": {
+            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/media-feature-name-case/README.md",
+            "fixable": true,
+            "stylistic": true,
+            "value": "lower"
+        },
+        "@stylistic/media-feature-parentheses-space-inside": {
+            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/media-feature-parentheses-space-inside/README.md",
+            "fixable": true,
+            "stylistic": true,
+            "value": "never"
+        },
+        "@stylistic/media-feature-range-operator-space-after": {
+            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/media-feature-range-operator-space-after/README.md",
+            "fixable": true,
+            "stylistic": true,
+            "value": "always"
+        },
+        "@stylistic/media-feature-range-operator-space-before": {
+            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/media-feature-range-operator-space-before/README.md",
+            "fixable": true,
+            "stylistic": true,
+            "value": "always"
+        },
+        "@stylistic/media-query-list-comma-newline-after": {
+            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/media-query-list-comma-newline-after/README.md",
+            "fixable": true,
+            "stylistic": true,
+            "value": "always-multi-line"
+        },
+        "@stylistic/media-query-list-comma-space-after": {
+            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/media-query-list-comma-space-after/README.md",
+            "fixable": true,
+            "stylistic": true,
+            "value": "always-single-line"
+        },
+        "@stylistic/media-query-list-comma-space-before": {
+            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/media-query-list-comma-space-before/README.md",
+            "fixable": true,
+            "stylistic": true,
+            "value": "never"
+        },
+        "@stylistic/no-empty-first-line": {
+            "stylistic": true,
+            "value": true
+        },
+        "@stylistic/no-eol-whitespace": {
+            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/no-eol-whitespace/README.md",
+            "fixable": true,
+            "stylistic": true,
+            "value": true
+        },
+        "@stylistic/no-extra-semicolons": {
+            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/no-extra-semicolons/README.md",
+            "fixable": true,
+            "stylistic": true,
+            "value": true
+        },
+        "@stylistic/no-missing-end-of-source-newline": {
+            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/no-missing-end-of-source-newline/README.md",
+            "fixable": true,
+            "stylistic": true,
+            "value": true
+        },
+        "@stylistic/number-leading-zero": {
+            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/number-leading-zero/README.md",
+            "fixable": true,
+            "stylistic": true,
+            "value": "always"
+        },
+        "@stylistic/number-no-trailing-zeros": {
+            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/number-no-trailing-zeros/README.md",
+            "fixable": true,
+            "stylistic": true,
+            "value": true
+        },
+        "@stylistic/property-case": {
+            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/property-case/README.md",
+            "fixable": true,
+            "stylistic": true,
+            "value": "lower"
+        },
+        "@stylistic/selector-attribute-brackets-space-inside": {
+            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-attribute-brackets-space-inside/README.md",
+            "fixable": true,
+            "stylistic": true,
+            "value": "never"
+        },
+        "@stylistic/selector-attribute-operator-space-after": {
+            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-attribute-operator-space-after/README.md",
+            "fixable": true,
+            "stylistic": true,
+            "value": "never"
+        },
+        "@stylistic/selector-attribute-operator-space-before": {
+            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-attribute-operator-space-before/README.md",
+            "fixable": true,
+            "stylistic": true,
+            "value": "never"
+        },
+        "@stylistic/selector-combinator-space-after": {
+            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-combinator-space-after/README.md",
+            "fixable": true,
+            "stylistic": true,
+            "value": "always"
+        },
+        "@stylistic/selector-combinator-space-before": {
+            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-combinator-space-before/README.md",
+            "fixable": true,
+            "stylistic": true,
+            "value": "always"
+        },
+        "@stylistic/selector-descendant-combinator-no-non-space": {
+            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-descendant-combinator-no-non-space/README.md",
+            "fixable": true,
+            "stylistic": true,
+            "value": true
+        },
+        "@stylistic/selector-list-comma-newline-after": {
+            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-list-comma-newline-after/README.md",
+            "fixable": true,
+            "stylistic": true,
+            "value": "always"
+        },
+        "@stylistic/selector-list-comma-space-before": {
+            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-list-comma-space-before/README.md",
+            "fixable": true,
+            "stylistic": true,
+            "value": "never"
+        },
+        "@stylistic/selector-max-empty-lines": {
+            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-max-empty-lines/README.md",
+            "fixable": true,
+            "stylistic": true,
+            "value": 0
+        },
+        "@stylistic/selector-pseudo-class-case": {
+            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-pseudo-class-case/README.md",
+            "fixable": true,
+            "stylistic": true,
+            "value": "lower"
+        },
+        "@stylistic/selector-pseudo-class-parentheses-space-inside": {
+            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-pseudo-class-parentheses-space-inside/README.md",
+            "fixable": true,
+            "stylistic": true,
+            "value": "never"
+        },
+        "@stylistic/selector-pseudo-element-case": {
+            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-pseudo-element-case/README.md",
+            "fixable": true,
+            "stylistic": true,
+            "value": "lower"
+        },
+        "@stylistic/string-quotes": {
+            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/string-quotes/README.md",
+            "fixable": true,
+            "stylistic": true,
+            "value": "double"
+        },
+        "@stylistic/unit-case": {
+            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/unit-case/README.md",
+            "fixable": true,
+            "stylistic": true,
+            "value": "lower"
+        },
+        "@stylistic/value-list-comma-newline-after": {
+            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/value-list-comma-newline-after/README.md",
+            "fixable": true,
+            "stylistic": true,
+            "value": "always-multi-line"
+        },
+        "@stylistic/value-list-comma-space-after": {
+            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/value-list-comma-space-after/README.md",
+            "fixable": true,
+            "stylistic": true,
+            "value": "always-single-line"
+        },
+        "@stylistic/value-list-comma-space-before": {
+            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/value-list-comma-space-before/README.md",
+            "fixable": true,
+            "stylistic": true,
+            "value": "never"
+        },
+        "@stylistic/value-list-max-empty-lines": {
+            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/value-list-max-empty-lines/README.md",
+            "fixable": true,
+            "stylistic": true,
+            "value": 0
+        },
+        "order/order": {
+            "url": "https://github.com/hudochenkov/stylelint-order/blob/master/rules/order/README.md",
+            "fixable": true,
+            "link": "[order/order](https://github.com/theKashey/stylelint-semantic-groups/blob/main/src/rules-order.ts)"
+        },
+        "order/properties-order": {
+            "url": "https://github.com/hudochenkov/stylelint-order/blob/master/rules/properties-order/README.md",
+            "fixable": true,
+            "link": "[order/properties-order](https://github.com/theKashey/stylelint-semantic-groups/blob/main/src/properties-order.ts)"
+        }
+    }
+}
