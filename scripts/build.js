@@ -12,6 +12,43 @@ import { propertyOrdering, selectorOrdering } from 'stylelint-semantic-groups';
 import builtInRules from '../node_modules/stylelint/lib/rules/index.mjs';
 import myOverrideRules from '../lib/rules-override.js';
 
+const jsonToStr = (obj, indent = 4) => {
+    return JSON.stringify(obj, (key, value) => {
+        if (typeof value === 'function') {
+            return value.toString();
+        }
+        return value;
+    }, indent);
+};
+
+const jsonToContent = (obj, indent = 4) => {
+
+    const cache = {};
+    let index = 1;
+
+    let str = JSON.stringify(obj, (key, value) => {
+        if (typeof value === 'function') {
+            const funStr = value.toString();
+            const cacheKey = `{function_${index}}`;
+            cache[cacheKey] = funStr;
+            index += 1;
+            return cacheKey;
+        }
+        return value;
+    }, indent);
+
+    if (str) {
+        str = str.replace(/"/g, "'");
+
+        Object.keys(cache).forEach((key) => {
+            const strKey = `'${key}'`;
+            str = str.replace(strKey, cache[key]);
+        });
+    }
+
+    return str;
+};
+
 const checkRules = (metadata) => {
     const allRules = metadata.rules;
 
@@ -86,7 +123,8 @@ const checkRules = (metadata) => {
             if (item.link) {
                 value = item.link;
             } else {
-                value = `\`${JSON.stringify(item.value)}\``;
+                const str = jsonToStr(item.value, 0);
+                value = `\`${str}\``;
                 if (value.length > 36) {
                     value = `<details><summary>Details</summary>${value}</details>`;
                 }
@@ -102,7 +140,7 @@ const checkRules = (metadata) => {
 
     // override rules
     Object.keys(myOverrideRules).forEach((key) => {
-        EC.logYellow(`[override] ${key}: ${allRules[key].value} -> ${JSON.stringify(myOverrideRules[key])}`);
+        EC.logYellow(`[override] ${key}: ${allRules[key].value} -> ${jsonToStr(myOverrideRules[key], 0)}`);
     });
 
 
@@ -166,32 +204,6 @@ const checkRules = (metadata) => {
 
 };
 
-const jsonToStr = (obj) => {
-
-    const cache = {};
-    let index = 1;
-
-    let str = JSON.stringify(obj, (key, value) => {
-        if (typeof value === 'function') {
-            const funStr = value.toString();
-            const cacheKey = `{function_${index}}`;
-            cache[cacheKey] = funStr;
-            index += 1;
-            return cacheKey;
-        }
-        return value;
-    }, 4);
-
-    str = str.replace(/"/g, "'");
-
-    Object.keys(cache).forEach((key) => {
-        const strKey = `'${key}'`;
-        str = str.replace(strKey, cache[key]);
-    });
-
-    return str;
-};
-
 const start = async () => {
 
     const date = new Date().toLocaleDateString();
@@ -210,7 +222,7 @@ const start = async () => {
     // =====================================================================================
     // save recommended rules
     const recommendedRules = recommended.rules;
-    const recommendedJsonStr = jsonToStr(recommendedRules);
+    const recommendedJsonStr = jsonToContent(recommendedRules);
     const recommendedContent = `export default ${recommendedJsonStr};\n`;
     fs.writeFileSync(path.resolve(import.meta.dirname, '../lib/rules-recommended.js'), recommendedContent);
 
@@ -227,7 +239,7 @@ const start = async () => {
     // =====================================================================================
     // save standard rules
     const standardRules = standard.rules;
-    const standardJsonStr = jsonToStr(standardRules);
+    const standardJsonStr = jsonToContent(standardRules);
     const standardContent = `export default ${standardJsonStr};\n`;
     fs.writeFileSync(path.resolve(import.meta.dirname, '../lib/rules-standard.js'), standardContent);
 
@@ -247,7 +259,7 @@ const start = async () => {
     const stylisticPath = fileURLToPath(import.meta.resolve('@stylistic/stylelint-config'));
     const stylistic = JSON.parse(fs.readFileSync(stylisticPath).toString('utf-8'));
     const stylisticRules = stylistic.rules;
-    const stylisticJsonStr = jsonToStr(stylisticRules);
+    const stylisticJsonStr = jsonToContent(stylisticRules);
     const stylisticContent = `export default ${stylisticJsonStr};\n`;
     fs.writeFileSync(path.resolve(import.meta.dirname, '../lib/rules-stylistic.js'), stylisticContent);
 
@@ -281,7 +293,7 @@ const start = async () => {
         'order/order': selectorOrdering,
         'order/properties-order': propertyOrdering
     };
-    const orderJsonStr = jsonToStr(orderRules);
+    const orderJsonStr = jsonToContent(orderRules);
     const orderContent = `export default ${orderJsonStr};\n`;
     fs.writeFileSync(path.resolve(import.meta.dirname, '../lib/rules-order.js'), orderContent);
 
@@ -309,12 +321,7 @@ const start = async () => {
     };
 
     const rulesPath = path.resolve(import.meta.dirname, '../lib/metadata.json');
-    fs.writeFileSync(rulesPath, JSON.stringify(metadata, (key, value) => {
-        if (typeof value === 'function') {
-            return value.toString();
-        }
-        return value;
-    }, 4));
+    fs.writeFileSync(rulesPath, jsonToStr(metadata));
     EC.logGreen(`generated metadata: ${rulesPath}`);
 
     // =====================================================================================
