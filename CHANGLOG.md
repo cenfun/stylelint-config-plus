@@ -1,5 +1,8 @@
 ## Changelog
 
+- 1.1.3
+    - fixed at-rules for scss
+
 - 1.1.2
     - fixed dependencies
 

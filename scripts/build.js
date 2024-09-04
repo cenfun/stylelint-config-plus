@@ -1,13 +1,10 @@
 import os from 'os';
 import fs from 'fs';
 import path from 'path';
-import { fileURLToPath } from 'url';
 import EC from 'eight-colors';
 import MG from 'markdown-grid';
 import recommended from 'stylelint-config-recommended';
 import standard from 'stylelint-config-standard';
-
-import { propertyOrdering, selectorOrdering } from 'stylelint-semantic-groups';
 
 import builtInRules from '../node_modules/stylelint/lib/rules/index.mjs';
 import myOverrideRules from '../lib/rules-override.js';
@@ -262,9 +259,8 @@ const start = async () => {
 
     // =====================================================================================
     // save stylistic rules
-    const stylisticPath = fileURLToPath(import.meta.resolve('@stylistic/stylelint-config'));
-    const stylistic = JSON.parse(fs.readFileSync(stylisticPath).toString('utf-8'));
-    const stylisticRules = stylistic.rules;
+    const stylistic = await import('@stylistic/stylelint-config');
+    const stylisticRules = stylistic.default.rules;
     const stylisticJsonStr = jsonToContent(stylisticRules);
     const stylisticContent = `export default ${stylisticJsonStr};\n`;
     fs.writeFileSync(path.resolve(import.meta.dirname, '../lib/rules-stylistic.js'), stylisticContent);
@@ -281,37 +277,6 @@ const start = async () => {
             value
         };
     }
-
-    // =====================================================================================
-    // save order rules
-    propertyOrdering.forEach((list) => {
-        list.forEach((item) => {
-            item.emptyLineBefore = 'never';
-        });
-    });
-
-    const links = {
-        'order/order': 'https://github.com/theKashey/stylelint-semantic-groups/blob/main/src/rules-order.ts',
-        'order/properties-order': 'https://github.com/theKashey/stylelint-semantic-groups/blob/main/src/properties-order.ts'
-    };
-
-    const orderRules = {
-        'order/order': selectorOrdering,
-        'order/properties-order': propertyOrdering
-    };
-    const orderJsonStr = jsonToContent(orderRules);
-    const orderContent = `export default ${orderJsonStr};\n`;
-    fs.writeFileSync(path.resolve(import.meta.dirname, '../lib/rules-order.js'), orderContent);
-
-    Object.keys(orderRules).forEach((key) => {
-        const id = key.replace('order/', '');
-        const link = `see [${id}](${links[key]})`;
-        rules[key] = {
-            url: `https://github.com/hudochenkov/stylelint-order/blob/master/rules/${id}/README.md`,
-            fixable: true,
-            link
-        };
-    });
 
     // =====================================================================================
     // save metadata

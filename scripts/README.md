@@ -3,7 +3,7 @@
 - [stylelint-config-recommended](https://github.com/stylelint/stylelint-config-recommended)
 - [stylelint-config-standard](https://github.com/stylelint/stylelint-config-standard)
 - [@stylistic/stylelint-plugin](https://www.npmjs.com/package/@stylistic/stylelint-plugin) 
-- [stylelint-order](https://github.com/hudochenkov/stylelint-order) with [stylelint-semantic-groups](https://github.com/theKashey/stylelint-semantic-groups)
+- [stylelint-order](https://github.com/hudochenkov/stylelint-order)
 - [stylelint-config-html](https://www.npmjs.com/package/stylelint-config-html) (*.html, *.vue and so on)
 
 ## Install

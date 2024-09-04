@@ -1,6 +1,6 @@
 {
-    "version": "16.5.0",
-    "date": "2024/5/7",
+    "version": "16.9.0",
+    "date": "2024/9/4",
     "rules": {
         "alpha-value-notation": {
             "url": "https://stylelint.io/user-guide/rules/alpha-value-notation",
@@ -1056,16 +1056,6 @@
             "fixable": true,
             "stylistic": true,
             "value": 0
-        },
-        "order/order": {
-            "url": "https://github.com/hudochenkov/stylelint-order/blob/master/rules/order/README.md",
-            "fixable": true,
-            "link": "see [order](https://github.com/theKashey/stylelint-semantic-groups/blob/main/src/rules-order.ts)"
-        },
-        "order/properties-order": {
-            "url": "https://github.com/hudochenkov/stylelint-order/blob/master/rules/properties-order/README.md",
-            "fixable": true,
-            "link": "see [properties-order](https://github.com/theKashey/stylelint-semantic-groups/blob/main/src/properties-order.ts)"
         }
     }
 }
