@@ -279,6 +279,12 @@ const start = async () => {
     }
 
     // =====================================================================================
+
+    Object.keys(myOverrideRules).forEach((key) => {
+        rules[key].value = myOverrideRules[key];
+    });
+
+
     // save metadata
     // console.log(rules);
 

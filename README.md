@@ -38,7 +38,7 @@ Base on [stylelint@16.9.0](https://github.com/stylelint/stylelint) (2024/9/4)
 |  3|[at-rule-allowed-list](https://stylelint.io/user-guide/rules/at-rule-allowed-list)|    |   ❌  |     |
 |  4|[at-rule-disallowed-list](https://stylelint.io/user-guide/rules/at-rule-disallowed-list)|    |   ❌  |     |
 |  5|[at-rule-empty-line-before](https://stylelint.io/user-guide/rules/at-rule-empty-line-before)|✅🔧|  ✔️ |<details><summary>Details</summary>`["always",{"except":["blockless-after-same-name-blockless","first-nested"],"ignore":["after-comment"]}]`</details>|
-|  6|[at-rule-no-unknown](https://stylelint.io/user-guide/rules/at-rule-no-unknown)|✅  |  ✔️ |`true`|
+|  6|[at-rule-no-unknown](https://stylelint.io/user-guide/rules/at-rule-no-unknown)|✅  |  ✔️ |<details><summary>Details</summary>`[true,{"ignoreAtRules":["at-root","content","debug","each","else","else if","error","extend","for","forward","function","if","import","include","media","mixin","return","use","warn","while"]}]`</details>|
 |  7|[at-rule-no-vendor-prefix](https://stylelint.io/user-guide/rules/at-rule-no-vendor-prefix)|✅🔧|  ✔️ |`true`|
 |  8|[at-rule-property-required-list](https://stylelint.io/user-guide/rules/at-rule-property-required-list)|    |   ❌  |     |
 |  9|[block-no-empty](https://stylelint.io/user-guide/rules/block-no-empty)|✅  |  ✔️ |`true`|
@@ -72,14 +72,14 @@ Base on [stylelint@16.9.0](https://github.com/stylelint/stylelint) (2024/9/4)
 | 37|[declaration-property-value-no-unknown](https://stylelint.io/user-guide/rules/declaration-property-value-no-unknown)|    |   ❌  |     |
 | 38|[font-family-name-quotes](https://stylelint.io/user-guide/rules/font-family-name-quotes)|✅🔧|  ✔️ |`"always-where-recommended"`|
 | 39|[font-family-no-duplicate-names](https://stylelint.io/user-guide/rules/font-family-no-duplicate-names)|✅  |  ✔️ |`true`|
-| 40|[font-family-no-missing-generic-family-keyword](https://stylelint.io/user-guide/rules/font-family-no-missing-generic-family-keyword)|✅  |  ✔️ |`true`|
+| 40|[font-family-no-missing-generic-family-keyword](https://stylelint.io/user-guide/rules/font-family-no-missing-generic-family-keyword)|✅  |  ✔️ |`null`|
 | 41|[font-weight-notation](https://stylelint.io/user-guide/rules/font-weight-notation)|🔧|  ✔️ |`undefined`|
 | 42|[function-allowed-list](https://stylelint.io/user-guide/rules/function-allowed-list)|    |   ❌  |     |
 | 43|[function-calc-no-unspaced-operator](https://stylelint.io/user-guide/rules/function-calc-no-unspaced-operator)|✅🔧|  ✔️ |`true`|
 | 44|[function-disallowed-list](https://stylelint.io/user-guide/rules/function-disallowed-list)|    |   ❌  |     |
 | 45|[function-linear-gradient-no-nonstandard-direction](https://stylelint.io/user-guide/rules/function-linear-gradient-no-nonstandard-direction)|✅  |  ✔️ |`true`|
 | 46|[function-name-case](https://stylelint.io/user-guide/rules/function-name-case)|✅🔧|  ✔️ |`"lower"`|
-| 47|[function-no-unknown](https://stylelint.io/user-guide/rules/function-no-unknown)|✅  |  ✔️ |`true`|
+| 47|[function-no-unknown](https://stylelint.io/user-guide/rules/function-no-unknown)|✅  |  ✔️ |<details><summary>Details</summary>`[true,{"ignoreFunctions":["v-bind"]}]`</details>|
 | 48|[function-url-no-scheme-relative](https://stylelint.io/user-guide/rules/function-url-no-scheme-relative)|    |   ❌  |     |
 | 49|[function-url-quotes](https://stylelint.io/user-guide/rules/function-url-quotes)|✅🔧|  ✔️ |`"always"`|
 | 50|[function-url-scheme-allowed-list](https://stylelint.io/user-guide/rules/function-url-scheme-allowed-list)|    |   ❌  |     |
@@ -173,7 +173,7 @@ Base on [stylelint@16.9.0](https://github.com/stylelint/stylelint) (2024/9/4)
 |138|[@stylistic/color-hex-case](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/color-hex-case/README.md)|🔧🎨|  ✔️ |`"lower"`|
 |139|[@stylistic/declaration-bang-space-after](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/declaration-bang-space-after/README.md)|🔧🎨|  ✔️ |`"never"`|
 |140|[@stylistic/declaration-bang-space-before](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/declaration-bang-space-before/README.md)|🔧🎨|  ✔️ |`"always"`|
-|141|[@stylistic/declaration-block-semicolon-newline-after](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/declaration-block-semicolon-newline-after/README.md)|🔧🎨|  ✔️ |`"always-multi-line"`|
+|141|[@stylistic/declaration-block-semicolon-newline-after](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/declaration-block-semicolon-newline-after/README.md)|🔧🎨|  ✔️ |`"always"`|
 |142|[@stylistic/declaration-block-semicolon-space-after](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/declaration-block-semicolon-space-after/README.md)|🔧🎨|  ✔️ |`"always-single-line"`|
 |143|[@stylistic/declaration-block-semicolon-space-before](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/declaration-block-semicolon-space-before/README.md)|🔧🎨|  ✔️ |`"never"`|
 |144|[@stylistic/declaration-block-trailing-semicolon](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/declaration-block-trailing-semicolon/README.md)|🔧🎨|  ✔️ |`"always"`|
@@ -187,7 +187,7 @@ Base on [stylelint@16.9.0](https://github.com/stylelint/stylelint) (2024/9/4)
 |152|[@stylistic/function-parentheses-newline-inside](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/function-parentheses-newline-inside/README.md)|🔧🎨|  ✔️ |`"always-multi-line"`|
 |153|[@stylistic/function-parentheses-space-inside](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/function-parentheses-space-inside/README.md)|🔧🎨|  ✔️ |`"never-single-line"`|
 |154|[@stylistic/function-whitespace-after](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/function-whitespace-after/README.md)|🔧🎨|  ✔️ |`"always"`|
-|155|[@stylistic/indentation](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/indentation/README.md)|🔧🎨|  ✔️ |`2`  |
+|155|[@stylistic/indentation](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/indentation/README.md)|🔧🎨|  ✔️ |`4`  |
 |156|[@stylistic/max-empty-lines](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/max-empty-lines/README.md)|🔧🎨|  ✔️ |`1`  |
 |157|[@stylistic/max-line-length](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/max-line-length/README.md)|🎨|  ✔️ |`120`|
 |158|[@stylistic/media-feature-colon-space-after](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/media-feature-colon-space-after/README.md)|🔧🎨|  ✔️ |`"always"`|

@@ -50,7 +50,33 @@
         "at-rule-no-unknown": {
             "url": "https://stylelint.io/user-guide/rules/at-rule-no-unknown",
             "recommended": true,
-            "value": true
+            "value": [
+                true,
+                {
+                    "ignoreAtRules": [
+                        "at-root",
+                        "content",
+                        "debug",
+                        "each",
+                        "else",
+                        "else if",
+                        "error",
+                        "extend",
+                        "for",
+                        "forward",
+                        "function",
+                        "if",
+                        "import",
+                        "include",
+                        "media",
+                        "mixin",
+                        "return",
+                        "use",
+                        "warn",
+                        "while"
+                    ]
+                }
+            ]
         },
         "at-rule-no-vendor-prefix": {
             "url": "https://stylelint.io/user-guide/rules/at-rule-no-vendor-prefix",
@@ -255,7 +281,7 @@
         "font-family-no-missing-generic-family-keyword": {
             "url": "https://stylelint.io/user-guide/rules/font-family-no-missing-generic-family-keyword",
             "recommended": true,
-            "value": true
+            "value": null
         },
         "font-weight-notation": {
             "url": "https://stylelint.io/user-guide/rules/font-weight-notation",
@@ -287,7 +313,14 @@
         "function-no-unknown": {
             "url": "https://stylelint.io/user-guide/rules/function-no-unknown",
             "recommended": true,
-            "value": true
+            "value": [
+                true,
+                {
+                    "ignoreFunctions": [
+                        "v-bind"
+                    ]
+                }
+            ]
         },
         "function-url-no-scheme-relative": {
             "url": "https://stylelint.io/user-guide/rules/function-url-no-scheme-relative"
@@ -758,7 +791,7 @@
             "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/declaration-block-semicolon-newline-after/README.md",
             "fixable": true,
             "stylistic": true,
-            "value": "always-multi-line"
+            "value": "always"
         },
         "@stylistic/declaration-block-semicolon-space-after": {
             "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/declaration-block-semicolon-space-after/README.md",
@@ -842,7 +875,7 @@
             "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/indentation/README.md",
             "fixable": true,
             "stylistic": true,
-            "value": 2
+            "value": 4
         },
         "@stylistic/max-empty-lines": {
             "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/max-empty-lines/README.md",
