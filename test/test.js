@@ -74,8 +74,8 @@ it('check results', () => {
 
         const { snapPath, savePath } = item;
 
-        const c1 = fs.readFileSync(snapPath).toString('utf-8');
-        const c2 = fs.readFileSync(savePath).toString('utf-8');
+        const c1 = fs.readFileSync(snapPath).toString('utf-8').replace(/\r\n/g, '\n');
+        const c2 = fs.readFileSync(savePath).toString('utf-8').replace(/\r\n/g, '\n');
 
         if (c1 !== c2) {
             console.log('=========================================================');

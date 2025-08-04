@@ -143,7 +143,8 @@ const checkRules = (metadata) => {
 
     // override rules
     Object.keys(myOverrideRules).forEach((key) => {
-        EC.logYellow(`[override] ${key}: ${allRules[key].value} -> ${jsonToStr(myOverrideRules[key], 0)}`);
+        const orig = jsonToStr(allRules[key].originalValue);
+        console.log(EC.yellow('[override]'), `${key}:`, EC.yellow(orig), '->', EC.cyan(jsonToStr(myOverrideRules[key], 0)));
     });
 
 
@@ -281,6 +282,7 @@ const start = async () => {
     // =====================================================================================
 
     Object.keys(myOverrideRules).forEach((key) => {
+        rules[key].originalValue = rules[key].value;
         rules[key].value = myOverrideRules[key];
     });
 

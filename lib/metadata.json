@@ -1,6 +1,6 @@
 {
-    "version": "16.9.0",
-    "date": "2024/9/4",
+    "version": "16.23.0",
+    "date": "2025/8/4",
     "rules": {
         "alpha-value-notation": {
             "url": "https://stylelint.io/user-guide/rules/alpha-value-notation",
@@ -27,6 +27,16 @@
         "at-rule-allowed-list": {
             "url": "https://stylelint.io/user-guide/rules/at-rule-allowed-list"
         },
+        "at-rule-descriptor-no-unknown": {
+            "url": "https://stylelint.io/user-guide/rules/at-rule-descriptor-no-unknown",
+            "recommended": true,
+            "value": true
+        },
+        "at-rule-descriptor-value-no-unknown": {
+            "url": "https://stylelint.io/user-guide/rules/at-rule-descriptor-value-no-unknown",
+            "recommended": true,
+            "value": true
+        },
         "at-rule-disallowed-list": {
             "url": "https://stylelint.io/user-guide/rules/at-rule-disallowed-list"
         },
@@ -46,6 +56,12 @@
                     ]
                 }
             ]
+        },
+        "at-rule-no-deprecated": {
+            "url": "https://stylelint.io/user-guide/rules/at-rule-no-deprecated",
+            "fixable": true,
+            "recommended": true,
+            "value": true
         },
         "at-rule-no-unknown": {
             "url": "https://stylelint.io/user-guide/rules/at-rule-no-unknown",
@@ -76,13 +92,26 @@
                         "while"
                     ]
                 }
-            ]
+            ],
+            "originalValue": true
         },
         "at-rule-no-vendor-prefix": {
             "url": "https://stylelint.io/user-guide/rules/at-rule-no-vendor-prefix",
             "fixable": true,
             "standard": true,
             "value": true
+        },
+        "at-rule-prelude-no-invalid": {
+            "url": "https://stylelint.io/user-guide/rules/at-rule-prelude-no-invalid",
+            "recommended": true,
+            "value": [
+                true,
+                {
+                    "ignoreAtRules": [
+                        "media"
+                    ]
+                }
+            ]
         },
         "at-rule-property-required-list": {
             "url": "https://stylelint.io/user-guide/rules/at-rule-property-required-list"
@@ -91,6 +120,17 @@
             "url": "https://stylelint.io/user-guide/rules/block-no-empty",
             "recommended": true,
             "value": true
+        },
+        "block-no-redundant-nested-style-rules": {
+            "url": "https://stylelint.io/user-guide/rules/block-no-redundant-nested-style-rules",
+            "standard": true,
+            "value": true
+        },
+        "color-function-alias-notation": {
+            "url": "https://stylelint.io/user-guide/rules/color-function-alias-notation",
+            "fixable": true,
+            "standard": true,
+            "value": "without-alpha"
         },
         "color-function-notation": {
             "url": "https://stylelint.io/user-guide/rules/color-function-notation",
@@ -114,9 +154,7 @@
             "url": "https://stylelint.io/user-guide/rules/color-no-hex"
         },
         "color-no-invalid-hex": {
-            "url": "https://stylelint.io/user-guide/rules/color-no-invalid-hex",
-            "recommended": true,
-            "value": true
+            "url": "https://stylelint.io/user-guide/rules/color-no-invalid-hex"
         },
         "comment-empty-line-before": {
             "url": "https://stylelint.io/user-guide/rules/comment-empty-line-before",
@@ -150,6 +188,16 @@
         },
         "comment-word-disallowed-list": {
             "url": "https://stylelint.io/user-guide/rules/comment-word-disallowed-list"
+        },
+        "container-name-pattern": {
+            "url": "https://stylelint.io/user-guide/rules/container-name-pattern",
+            "standard": true,
+            "value": [
+                "^(--)?([a-z][a-z0-9]*)(-[a-z0-9]+)*$",
+                {
+                    "message": "(name) => `Expected container name \"${name}\" to be kebab-case`"
+                }
+            ]
         },
         "custom-media-pattern": {
             "url": "https://stylelint.io/user-guide/rules/custom-media-pattern",
@@ -264,8 +312,16 @@
         "declaration-property-value-disallowed-list": {
             "url": "https://stylelint.io/user-guide/rules/declaration-property-value-disallowed-list"
         },
+        "declaration-property-value-keyword-no-deprecated": {
+            "url": "https://stylelint.io/user-guide/rules/declaration-property-value-keyword-no-deprecated",
+            "fixable": true,
+            "recommended": true,
+            "value": true
+        },
         "declaration-property-value-no-unknown": {
-            "url": "https://stylelint.io/user-guide/rules/declaration-property-value-no-unknown"
+            "url": "https://stylelint.io/user-guide/rules/declaration-property-value-no-unknown",
+            "recommended": true,
+            "value": true
         },
         "font-family-name-quotes": {
             "url": "https://stylelint.io/user-guide/rules/font-family-name-quotes",
@@ -281,7 +337,8 @@
         "font-family-no-missing-generic-family-keyword": {
             "url": "https://stylelint.io/user-guide/rules/font-family-no-missing-generic-family-keyword",
             "recommended": true,
-            "value": null
+            "value": null,
+            "originalValue": true
         },
         "font-weight-notation": {
             "url": "https://stylelint.io/user-guide/rules/font-weight-notation",
@@ -300,9 +357,7 @@
             "url": "https://stylelint.io/user-guide/rules/function-disallowed-list"
         },
         "function-linear-gradient-no-nonstandard-direction": {
-            "url": "https://stylelint.io/user-guide/rules/function-linear-gradient-no-nonstandard-direction",
-            "recommended": true,
-            "value": true
+            "url": "https://stylelint.io/user-guide/rules/function-linear-gradient-no-nonstandard-direction"
         },
         "function-name-case": {
             "url": "https://stylelint.io/user-guide/rules/function-name-case",
@@ -312,7 +367,6 @@
         },
         "function-no-unknown": {
             "url": "https://stylelint.io/user-guide/rules/function-no-unknown",
-            "recommended": true,
             "value": [
                 true,
                 {
@@ -375,6 +429,16 @@
                 }
             ]
         },
+        "layer-name-pattern": {
+            "url": "https://stylelint.io/user-guide/rules/layer-name-pattern",
+            "standard": true,
+            "value": [
+                "^([a-z][a-z0-9]*)(-[a-z0-9]+)*$",
+                {
+                    "message": "(name) => `Expected layer name \"${name}\" to be kebab-case`"
+                }
+            ]
+        },
         "length-zero-no-unit": {
             "url": "https://stylelint.io/user-guide/rules/length-zero-no-unit",
             "fixable": true,
@@ -421,7 +485,9 @@
             "url": "https://stylelint.io/user-guide/rules/media-feature-name-value-allowed-list"
         },
         "media-feature-name-value-no-unknown": {
-            "url": "https://stylelint.io/user-guide/rules/media-feature-name-value-no-unknown"
+            "url": "https://stylelint.io/user-guide/rules/media-feature-name-value-no-unknown",
+            "recommended": true,
+            "value": true
         },
         "media-feature-range-notation": {
             "url": "https://stylelint.io/user-guide/rules/media-feature-range-notation",
@@ -434,8 +500,18 @@
             "recommended": true,
             "value": true
         },
+        "media-type-no-deprecated": {
+            "url": "https://stylelint.io/user-guide/rules/media-type-no-deprecated",
+            "recommended": true,
+            "value": true
+        },
         "named-grid-areas-no-invalid": {
             "url": "https://stylelint.io/user-guide/rules/named-grid-areas-no-invalid",
+            "recommended": true,
+            "value": true
+        },
+        "nesting-selector-no-missing-scoping-root": {
+            "url": "https://stylelint.io/user-guide/rules/nesting-selector-no-missing-scoping-root",
             "recommended": true,
             "value": true
         },
@@ -469,6 +545,11 @@
             "recommended": true,
             "value": true
         },
+        "no-invalid-position-declaration": {
+            "url": "https://stylelint.io/user-guide/rules/no-invalid-position-declaration",
+            "recommended": true,
+            "value": true
+        },
         "no-irregular-whitespace": {
             "url": "https://stylelint.io/user-guide/rules/no-irregular-whitespace",
             "recommended": true,
@@ -493,6 +574,12 @@
         },
         "property-disallowed-list": {
             "url": "https://stylelint.io/user-guide/rules/property-disallowed-list"
+        },
+        "property-no-deprecated": {
+            "url": "https://stylelint.io/user-guide/rules/property-no-deprecated",
+            "fixable": true,
+            "recommended": true,
+            "value": true
         },
         "property-no-unknown": {
             "url": "https://stylelint.io/user-guide/rules/property-no-unknown",
@@ -627,7 +714,16 @@
         "selector-pseudo-class-no-unknown": {
             "url": "https://stylelint.io/user-guide/rules/selector-pseudo-class-no-unknown",
             "recommended": true,
-            "value": true
+            "value": [
+                true,
+                {
+                    "ignorePseudoClasses": [
+                        "deep",
+                        "global"
+                    ]
+                }
+            ],
+            "originalValue": true
         },
         "selector-pseudo-element-allowed-list": {
             "url": "https://stylelint.io/user-guide/rules/selector-pseudo-element-allowed-list"
@@ -673,6 +769,19 @@
         "string-no-newline": {
             "url": "https://stylelint.io/user-guide/rules/string-no-newline",
             "recommended": true,
+            "value": [
+                true,
+                {
+                    "ignore": [
+                        "at-rule-preludes",
+                        "declaration-values"
+                    ]
+                }
+            ]
+        },
+        "syntax-string-no-invalid": {
+            "url": "https://stylelint.io/user-guide/rules/syntax-string-no-invalid",
+            "recommended": true,
             "value": true
         },
         "time-min-milliseconds": {
@@ -685,9 +794,7 @@
             "url": "https://stylelint.io/user-guide/rules/unit-disallowed-list"
         },
         "unit-no-unknown": {
-            "url": "https://stylelint.io/user-guide/rules/unit-no-unknown",
-            "recommended": true,
-            "value": true
+            "url": "https://stylelint.io/user-guide/rules/unit-no-unknown"
         },
         "value-keyword-case": {
             "url": "https://stylelint.io/user-guide/rules/value-keyword-case",
@@ -791,7 +898,8 @@
             "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/declaration-block-semicolon-newline-after/README.md",
             "fixable": true,
             "stylistic": true,
-            "value": "always"
+            "value": "always",
+            "originalValue": "always-multi-line"
         },
         "@stylistic/declaration-block-semicolon-space-after": {
             "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/declaration-block-semicolon-space-after/README.md",
@@ -875,7 +983,8 @@
             "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/indentation/README.md",
             "fixable": true,
             "stylistic": true,
-            "value": 4
+            "value": 4,
+            "originalValue": 2
         },
         "@stylistic/max-empty-lines": {
             "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/max-empty-lines/README.md",

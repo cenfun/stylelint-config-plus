@@ -1,4 +1,6 @@
 .my-class{
     width:10px;position:absolute;
     .sub {display:block;font-size:12px}
+
+    :deep(mark){color:red;}
 }
