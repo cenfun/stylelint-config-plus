@@ -20,7 +20,7 @@ export default {
 ```
 
 # Rules
-Base on [stylelint@16.23.0](https://github.com/stylelint/stylelint) (2025/8/4)  
+Base on [stylelint@16.23.0](https://github.com/stylelint/stylelint) (2025/8/5)  
 |   |Rules|Count|   |
 |:-:|-----|----:|--:|
 |   |All rules|  205|   |
