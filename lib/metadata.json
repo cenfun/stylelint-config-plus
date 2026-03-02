@@ -1,6 +1,6 @@
 {
-    "version": "16.23.0",
-    "date": "2025/8/5",
+    "version": "17.4.0",
+    "date": "2026/3/2",
     "rules": {
         "alpha-value-notation": {
             "url": "https://stylelint.io/user-guide/rules/alpha-value-notation",
@@ -323,6 +323,10 @@
             "recommended": true,
             "value": true
         },
+        "display-notation": {
+            "url": "https://stylelint.io/user-guide/rules/display-notation",
+            "fixable": true
+        },
         "font-family-name-quotes": {
             "url": "https://stylelint.io/user-guide/rules/font-family-name-quotes",
             "fixable": true,
@@ -433,7 +437,7 @@
             "url": "https://stylelint.io/user-guide/rules/layer-name-pattern",
             "standard": true,
             "value": [
-                "^([a-z][a-z0-9]*)(-[a-z0-9]+)*$",
+                "^([a-z][a-z0-9]*)([.-][a-z0-9]+)*$",
                 {
                     "message": "(name) => `Expected layer name \"${name}\" to be kebab-case`"
                 }
@@ -607,6 +611,9 @@
                     ]
                 }
             ]
+        },
+        "rule-nesting-at-rule-required-list": {
+            "url": "https://stylelint.io/user-guide/rules/rule-nesting-at-rule-required-list"
         },
         "rule-selector-property-disallowed-list": {
             "url": "https://stylelint.io/user-guide/rules/rule-selector-property-disallowed-list"

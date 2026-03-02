@@ -1,5 +1,8 @@
 ## Changelog
 
+- 1.1.4
+    - updated stylelint v17
+
 - 1.1.3
     - fixed at-rules for scss
 
