@@ -20,15 +20,15 @@ export default {
 ```
 
 # Rules
-Base on [stylelint@17.4.0](https://github.com/stylelint/stylelint) (2026/3/2)  
+Base on [stylelint@17.6.0](https://github.com/stylelint/stylelint) (3/30/2026)  
 |   |Rules|Count|   |
 |:-:|-----|----:|--:|
-|   |All rules|  207|   |
-|✔️|Defined in plus|  148|71.5%|
-| ❌|Undefined|   59|28.5%|
-| ✅|Recommended + Standard|   82|39.6%|
-|🔧|Fixable|  100|48.3%|
-|🎨|Stylistic|   64|30.9%|
+|   |All rules|  208|   |
+|✔️|Defined in plus|  149|71.6%|
+| ❌|Undefined|   59|28.4%|
+| ✅|Recommended + Standard|   82|39.4%|
+|🔧|Fixable|  101|48.6%|
+|🎨|Stylistic|   65|31.3%|
 
 ### Details  
 |   |Rules|Type|Enabled|Value|
@@ -219,27 +219,28 @@ Base on [stylelint@17.4.0](https://github.com/stylelint/stylelint) (2026/3/2)
 |184|[@stylistic/no-eol-whitespace](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/no-eol-whitespace/README.md)|🔧🎨|  ✔️ |`true`|
 |185|[@stylistic/no-extra-semicolons](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/no-extra-semicolons/README.md)|🔧🎨|  ✔️ |`true`|
 |186|[@stylistic/no-missing-end-of-source-newline](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/no-missing-end-of-source-newline/README.md)|🔧🎨|  ✔️ |`true`|
-|187|[@stylistic/number-leading-zero](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/number-leading-zero/README.md)|🔧🎨|  ✔️ |`"always"`|
-|188|[@stylistic/number-no-trailing-zeros](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/number-no-trailing-zeros/README.md)|🔧🎨|  ✔️ |`true`|
-|189|[@stylistic/property-case](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/property-case/README.md)|🔧🎨|  ✔️ |`"lower"`|
-|190|[@stylistic/selector-attribute-brackets-space-inside](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-attribute-brackets-space-inside/README.md)|🔧🎨|  ✔️ |`"never"`|
-|191|[@stylistic/selector-attribute-operator-space-after](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-attribute-operator-space-after/README.md)|🔧🎨|  ✔️ |`"never"`|
-|192|[@stylistic/selector-attribute-operator-space-before](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-attribute-operator-space-before/README.md)|🔧🎨|  ✔️ |`"never"`|
-|193|[@stylistic/selector-combinator-space-after](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-combinator-space-after/README.md)|🔧🎨|  ✔️ |`"always"`|
-|194|[@stylistic/selector-combinator-space-before](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-combinator-space-before/README.md)|🔧🎨|  ✔️ |`"always"`|
-|195|[@stylistic/selector-descendant-combinator-no-non-space](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-descendant-combinator-no-non-space/README.md)|🔧🎨|  ✔️ |`true`|
-|196|[@stylistic/selector-list-comma-newline-after](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-list-comma-newline-after/README.md)|🔧🎨|  ✔️ |`"always"`|
-|197|[@stylistic/selector-list-comma-space-before](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-list-comma-space-before/README.md)|🔧🎨|  ✔️ |`"never"`|
-|198|[@stylistic/selector-max-empty-lines](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-max-empty-lines/README.md)|🔧🎨|  ✔️ |`0`  |
-|199|[@stylistic/selector-pseudo-class-case](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-pseudo-class-case/README.md)|🔧🎨|  ✔️ |`"lower"`|
-|200|[@stylistic/selector-pseudo-class-parentheses-space-inside](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-pseudo-class-parentheses-space-inside/README.md)|🔧🎨|  ✔️ |`"never"`|
-|201|[@stylistic/selector-pseudo-element-case](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-pseudo-element-case/README.md)|🔧🎨|  ✔️ |`"lower"`|
-|202|[@stylistic/string-quotes](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/string-quotes/README.md)|🔧🎨|  ✔️ |`"double"`|
-|203|[@stylistic/unit-case](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/unit-case/README.md)|🔧🎨|  ✔️ |`"lower"`|
-|204|[@stylistic/value-list-comma-newline-after](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/value-list-comma-newline-after/README.md)|🔧🎨|  ✔️ |`"always-multi-line"`|
-|205|[@stylistic/value-list-comma-space-after](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/value-list-comma-space-after/README.md)|🔧🎨|  ✔️ |`"always-single-line"`|
-|206|[@stylistic/value-list-comma-space-before](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/value-list-comma-space-before/README.md)|🔧🎨|  ✔️ |`"never"`|
-|207|[@stylistic/value-list-max-empty-lines](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/value-list-max-empty-lines/README.md)|🔧🎨|  ✔️ |`0`  |
+|187|[@stylistic/no-multiple-whitespaces](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/no-multiple-whitespaces/README.md)|🔧🎨|  ✔️ |`true`|
+|188|[@stylistic/number-leading-zero](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/number-leading-zero/README.md)|🔧🎨|  ✔️ |`"always"`|
+|189|[@stylistic/number-no-trailing-zeros](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/number-no-trailing-zeros/README.md)|🔧🎨|  ✔️ |`true`|
+|190|[@stylistic/property-case](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/property-case/README.md)|🔧🎨|  ✔️ |`"lower"`|
+|191|[@stylistic/selector-attribute-brackets-space-inside](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-attribute-brackets-space-inside/README.md)|🔧🎨|  ✔️ |`"never"`|
+|192|[@stylistic/selector-attribute-operator-space-after](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-attribute-operator-space-after/README.md)|🔧🎨|  ✔️ |`"never"`|
+|193|[@stylistic/selector-attribute-operator-space-before](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-attribute-operator-space-before/README.md)|🔧🎨|  ✔️ |`"never"`|
+|194|[@stylistic/selector-combinator-space-after](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-combinator-space-after/README.md)|🔧🎨|  ✔️ |`"always"`|
+|195|[@stylistic/selector-combinator-space-before](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-combinator-space-before/README.md)|🔧🎨|  ✔️ |`"always"`|
+|196|[@stylistic/selector-descendant-combinator-no-non-space](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-descendant-combinator-no-non-space/README.md)|🔧🎨|  ✔️ |`true`|
+|197|[@stylistic/selector-list-comma-newline-after](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-list-comma-newline-after/README.md)|🔧🎨|  ✔️ |`"always"`|
+|198|[@stylistic/selector-list-comma-space-before](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-list-comma-space-before/README.md)|🔧🎨|  ✔️ |`"never"`|
+|199|[@stylistic/selector-max-empty-lines](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-max-empty-lines/README.md)|🔧🎨|  ✔️ |`0`  |
+|200|[@stylistic/selector-pseudo-class-case](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-pseudo-class-case/README.md)|🔧🎨|  ✔️ |`"lower"`|
+|201|[@stylistic/selector-pseudo-class-parentheses-space-inside](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-pseudo-class-parentheses-space-inside/README.md)|🔧🎨|  ✔️ |`"never"`|
+|202|[@stylistic/selector-pseudo-element-case](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-pseudo-element-case/README.md)|🔧🎨|  ✔️ |`"lower"`|
+|203|[@stylistic/string-quotes](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/string-quotes/README.md)|🔧🎨|  ✔️ |`"double"`|
+|204|[@stylistic/unit-case](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/unit-case/README.md)|🔧🎨|  ✔️ |`"lower"`|
+|205|[@stylistic/value-list-comma-newline-after](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/value-list-comma-newline-after/README.md)|🔧🎨|  ✔️ |`"always-multi-line"`|
+|206|[@stylistic/value-list-comma-space-after](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/value-list-comma-space-after/README.md)|🔧🎨|  ✔️ |`"always-single-line"`|
+|207|[@stylistic/value-list-comma-space-before](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/value-list-comma-space-before/README.md)|🔧🎨|  ✔️ |`"never"`|
+|208|[@stylistic/value-list-max-empty-lines](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/value-list-max-empty-lines/README.md)|🔧🎨|  ✔️ |`0`  |
 
 # Changelog
 [CHANGELOG.md](CHANGELOG.md)

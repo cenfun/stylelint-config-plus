@@ -1,6 +1,6 @@
 {
-    "version": "17.4.0",
-    "date": "2026/3/2",
+    "version": "17.6.0",
+    "date": "3/30/2026",
     "rules": {
         "alpha-value-notation": {
             "url": "https://stylelint.io/user-guide/rules/alpha-value-notation",
@@ -1076,6 +1076,12 @@
         },
         "@stylistic/no-missing-end-of-source-newline": {
             "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/no-missing-end-of-source-newline/README.md",
+            "fixable": true,
+            "stylistic": true,
+            "value": true
+        },
+        "@stylistic/no-multiple-whitespaces": {
+            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/no-multiple-whitespaces/README.md",
             "fixable": true,
             "stylistic": true,
             "value": true
