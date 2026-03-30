@@ -2,11 +2,12 @@
     <div></div>
 </template>
 <style lang="scss">
-@use "sass:math";
 $a: 100;
 $b: 10;
 
 $v: math.div($a, $b);
+
+@use "sass:math";
 
 .my-class {
     position: absolute;
