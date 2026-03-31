@@ -116,7 +116,7 @@ const checkRules = (metadata) => {
         const type = getRuleType(item);
         const enable = Boolean(type);
 
-        let icon = '';
+        let icon;
         let value = '';
         if (enable) {
             definedInfo.count += 1;
