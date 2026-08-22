@@ -1,13 +1,22 @@
-import os from 'os';
-import fs from 'fs';
-import path from 'path';
+import os from 'node:os';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath, pathToFileURL } from 'node:url';
+import { buildSync } from 'esbuild';
 import EC from 'eight-colors';
 import MG from 'markdown-grid';
 import recommended from 'stylelint-config-recommended';
 import standard from 'stylelint-config-standard';
+import myOverrideRules from '../src/rules-override.js';
 
-import builtInRules from '../node_modules/stylelint/lib/rules/index.mjs';
-import myOverrideRules from '../lib/rules-override.js';
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const rootPath = path.resolve(__dirname, '..');
+const srcPath = path.join(rootPath, 'src');
+const distPath = path.join(rootPath, 'dist');
+const stylelintPath = path.dirname(fileURLToPath(import.meta.resolve('stylelint/package.json')));
+const builtInRulesUrl = pathToFileURL(path.join(stylelintPath, 'lib/rules/index.mjs'));
+const { default: builtInRules } = await import(builtInRulesUrl);
+const stylisticPluginPath = path.dirname(fileURLToPath(import.meta.resolve('@stylistic/stylelint-plugin')));
 
 const jsonToStr = (obj, indent = 4, replacement = null) => {
     return JSON.stringify(obj, (key, value) => {
@@ -53,7 +62,7 @@ const jsonToContent = (obj, indent = 4) => {
 const checkRules = (metadata) => {
     const allRules = metadata.rules;
 
-    const info = `Base on [stylelint@${metadata.version}](https://github.com/stylelint/stylelint) (${metadata.date})  \n`;
+    const info = `Base on [stylelint@${metadata.version}](https://github.com/stylelint/stylelint) (${metadata.date})\n\n`;
 
     const definedInfo = {
         label: 'Defined in plus',
@@ -200,9 +209,9 @@ const checkRules = (metadata) => {
         rows
     });
 
-    let readmeContent = fs.readFileSync(path.resolve(import.meta.dirname, 'README.md')).toString('utf-8');
+    let readmeContent = fs.readFileSync(path.join(__dirname, 'README.md')).toString('utf-8');
     readmeContent = readmeContent.replace('{replace_holder_rules}', info + legendTable + title + rulesTable);
-    const readmePath = path.resolve(import.meta.dirname, '../README.md');
+    const readmePath = path.join(rootPath, 'README.md');
     fs.writeFileSync(readmePath, readmeContent);
     EC.logGreen('generated README.md');
 
@@ -228,7 +237,7 @@ const start = async () => {
     const recommendedRules = recommended.rules;
     const recommendedJsonStr = jsonToContent(recommendedRules);
     const recommendedContent = `export default ${recommendedJsonStr};\n`;
-    fs.writeFileSync(path.resolve(import.meta.dirname, '../lib/rules-recommended.js'), recommendedContent);
+    fs.writeFileSync(path.join(srcPath, 'rules-recommended.js'), recommendedContent);
 
     Object.keys(recommendedRules).forEach((key) => {
         const item = rules[key];
@@ -245,7 +254,7 @@ const start = async () => {
     const standardRules = standard.rules;
     const standardJsonStr = jsonToContent(standardRules);
     const standardContent = `export default ${standardJsonStr};\n`;
-    fs.writeFileSync(path.resolve(import.meta.dirname, '../lib/rules-standard.js'), standardContent);
+    fs.writeFileSync(path.join(srcPath, 'rules-standard.js'), standardContent);
 
     Object.keys(standardRules).forEach((key) => {
         const item = rules[key];
@@ -264,13 +273,14 @@ const start = async () => {
     const stylisticRules = stylistic.default.rules;
     const stylisticJsonStr = jsonToContent(stylisticRules);
     const stylisticContent = `export default ${stylisticJsonStr};\n`;
-    fs.writeFileSync(path.resolve(import.meta.dirname, '../lib/rules-stylistic.js'), stylisticContent);
+    fs.writeFileSync(path.join(srcPath, 'rules-stylistic.js'), stylisticContent);
 
     const stylisticKeys = Object.keys(stylisticRules);
     for (const key of stylisticKeys) {
         const value = stylisticRules[key];
         const id = key.replace('@stylistic/', '');
-        const item = await import(`../node_modules/@stylistic/stylelint-plugin/lib/rules/${id}/index.js`);
+        const ruleUrl = pathToFileURL(path.join(stylisticPluginPath, 'rules', id, 'index.js'));
+        const item = await import(ruleUrl);
 
         rules[key] = {
             ... item.meta,
@@ -290,7 +300,7 @@ const start = async () => {
     // save metadata
     // console.log(rules);
 
-    const packageJson = JSON.parse(fs.readFileSync(path.resolve(import.meta.dirname, '../node_modules/stylelint/package.json')).toString('utf-8'));
+    const packageJson = JSON.parse(fs.readFileSync(path.join(stylelintPath, 'package.json')).toString('utf-8'));
     const version = packageJson.version;
 
     const metadata = {
@@ -299,14 +309,49 @@ const start = async () => {
         rules
     };
 
-    const rulesPath = path.resolve(import.meta.dirname, '../lib/metadata.json');
+    const rulesPath = path.join(srcPath, 'metadata.json');
     fs.writeFileSync(rulesPath, jsonToStr(metadata));
     EC.logGreen(`generated metadata: ${rulesPath}`);
 
     // =====================================================================================
     checkRules(metadata);
 
+    // =====================================================================================
+    // bundle ESM and CommonJS entries
+    fs.rmSync(distPath, {
+        recursive: true,
+        force: true
+    });
+    fs.mkdirSync(distPath, {
+        recursive: true
+    });
+
+    const entryPath = path.join(srcPath, 'index.js');
+    const buildOptions = {
+        entryPoints: [entryPath],
+        bundle: true,
+        platform: 'node',
+        target: 'node20',
+        logLevel: 'silent'
+    };
+
+    buildSync({
+        ... buildOptions,
+        outfile: path.join(distPath, 'index.js'),
+        format: 'esm'
+    });
+
+    buildSync({
+        ... buildOptions,
+        outfile: path.join(distPath, 'index.cjs'),
+        format: 'cjs',
+        footer: {
+            js: 'module.exports = module.exports.default;'
+        }
+    });
+    EC.logGreen(`generated bundles: ${distPath}`);
+
 };
 
 
-start();
+await start();

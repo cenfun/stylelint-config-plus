@@ -12,23 +12,33 @@ npm i stylelint-config-plus -D
 ```
 
 ## Usage
+### ESM
 ```js
 // stylelint.config.js
 export default {
-    extends: ["stylelint-config-plus"]
+    extends: ['stylelint-config-plus']
+};
+```
+
+### CommonJS
+```js
+// stylelint.config.cjs
+module.exports = {
+    extends: ['stylelint-config-plus']
 };
 ```
 
 # Rules
-Base on [stylelint@17.6.0](https://github.com/stylelint/stylelint) (3/30/2026)  
+Base on [stylelint@17.14.1](https://github.com/stylelint/stylelint) (8/22/2026)
+
 |   |Rules|Count|   |
 |:-:|-----|----:|--:|
-|   |All rules|  208|   |
-|✔️|Defined in plus|  149|71.6%|
-| ❌|Undefined|   59|28.4%|
-| ✅|Recommended + Standard|   82|39.4%|
-|🔧|Fixable|  101|48.6%|
-|🎨|Stylistic|   65|31.3%|
+|   |All rules|  214|   |
+|✔️|Defined in plus|  154|72.0%|
+| ❌|Undefined|   60|28.0%|
+| ✅|Recommended + Standard|   82|38.3%|
+|🔧|Fixable|  106|49.5%|
+|🎨|Stylistic|   65|30.4%|
 
 ### Details  
 |   |Rules|Type|Enabled|Value|
@@ -129,118 +139,124 @@ Base on [stylelint@17.6.0](https://github.com/stylelint/stylelint) (3/30/2026)
 | 94|[number-max-precision](https://stylelint.io/user-guide/rules/number-max-precision)|✅  |  ✔️ |`4`  |
 | 95|[property-allowed-list](https://stylelint.io/user-guide/rules/property-allowed-list)|    |   ❌  |     |
 | 96|[property-disallowed-list](https://stylelint.io/user-guide/rules/property-disallowed-list)|    |   ❌  |     |
-| 97|[property-no-deprecated](https://stylelint.io/user-guide/rules/property-no-deprecated)|✅🔧|  ✔️ |`true`|
-| 98|[property-no-unknown](https://stylelint.io/user-guide/rules/property-no-unknown)|✅  |  ✔️ |`true`|
-| 99|[property-no-vendor-prefix](https://stylelint.io/user-guide/rules/property-no-vendor-prefix)|✅🔧|  ✔️ |`true`|
-|100|[rule-empty-line-before](https://stylelint.io/user-guide/rules/rule-empty-line-before)|✅🔧|  ✔️ |<details><summary>Details</summary>`["always-multi-line",{"except":["first-nested"],"ignore":["after-comment"]}]`</details>|
-|101|[rule-nesting-at-rule-required-list](https://stylelint.io/user-guide/rules/rule-nesting-at-rule-required-list)|    |   ❌  |     |
-|102|[rule-selector-property-disallowed-list](https://stylelint.io/user-guide/rules/rule-selector-property-disallowed-list)|    |   ❌  |     |
-|103|[selector-anb-no-unmatchable](https://stylelint.io/user-guide/rules/selector-anb-no-unmatchable)|✅  |  ✔️ |`true`|
-|104|[selector-attribute-name-disallowed-list](https://stylelint.io/user-guide/rules/selector-attribute-name-disallowed-list)|    |   ❌  |     |
-|105|[selector-attribute-operator-allowed-list](https://stylelint.io/user-guide/rules/selector-attribute-operator-allowed-list)|    |   ❌  |     |
-|106|[selector-attribute-operator-disallowed-list](https://stylelint.io/user-guide/rules/selector-attribute-operator-disallowed-list)|    |   ❌  |     |
-|107|[selector-attribute-quotes](https://stylelint.io/user-guide/rules/selector-attribute-quotes)|✅🔧|  ✔️ |`"always"`|
-|108|[selector-class-pattern](https://stylelint.io/user-guide/rules/selector-class-pattern)|✅  |  ✔️ |<details><summary>Details</summary>`["^([a-z][a-z0-9]*)(-[a-z0-9]+)*$",{"message":"(selector) => \"Expected class selector \"${selector}\" to be kebab-case\""}]`</details>|
-|109|[selector-combinator-allowed-list](https://stylelint.io/user-guide/rules/selector-combinator-allowed-list)|    |   ❌  |     |
-|110|[selector-combinator-disallowed-list](https://stylelint.io/user-guide/rules/selector-combinator-disallowed-list)|    |   ❌  |     |
-|111|[selector-disallowed-list](https://stylelint.io/user-guide/rules/selector-disallowed-list)|    |   ❌  |     |
-|112|[selector-id-pattern](https://stylelint.io/user-guide/rules/selector-id-pattern)|✅  |  ✔️ |<details><summary>Details</summary>`["^([a-z][a-z0-9]*)(-[a-z0-9]+)*$",{"message":"(selector) => \"Expected id selector \"${selector}\" to be kebab-case\""}]`</details>|
-|113|[selector-max-attribute](https://stylelint.io/user-guide/rules/selector-max-attribute)|    |   ❌  |     |
-|114|[selector-max-class](https://stylelint.io/user-guide/rules/selector-max-class)|    |   ❌  |     |
-|115|[selector-max-combinators](https://stylelint.io/user-guide/rules/selector-max-combinators)|    |   ❌  |     |
-|116|[selector-max-compound-selectors](https://stylelint.io/user-guide/rules/selector-max-compound-selectors)|    |   ❌  |     |
-|117|[selector-max-id](https://stylelint.io/user-guide/rules/selector-max-id)|    |   ❌  |     |
-|118|[selector-max-pseudo-class](https://stylelint.io/user-guide/rules/selector-max-pseudo-class)|    |   ❌  |     |
-|119|[selector-max-specificity](https://stylelint.io/user-guide/rules/selector-max-specificity)|    |   ❌  |     |
-|120|[selector-max-type](https://stylelint.io/user-guide/rules/selector-max-type)|    |   ❌  |     |
-|121|[selector-max-universal](https://stylelint.io/user-guide/rules/selector-max-universal)|    |   ❌  |     |
-|122|[selector-nested-pattern](https://stylelint.io/user-guide/rules/selector-nested-pattern)|    |   ❌  |     |
-|123|[selector-no-qualifying-type](https://stylelint.io/user-guide/rules/selector-no-qualifying-type)|    |   ❌  |     |
-|124|[selector-no-vendor-prefix](https://stylelint.io/user-guide/rules/selector-no-vendor-prefix)|✅🔧|  ✔️ |`true`|
-|125|[selector-not-notation](https://stylelint.io/user-guide/rules/selector-not-notation)|✅🔧|  ✔️ |`"complex"`|
-|126|[selector-pseudo-class-allowed-list](https://stylelint.io/user-guide/rules/selector-pseudo-class-allowed-list)|    |   ❌  |     |
-|127|[selector-pseudo-class-disallowed-list](https://stylelint.io/user-guide/rules/selector-pseudo-class-disallowed-list)|    |   ❌  |     |
-|128|[selector-pseudo-class-no-unknown](https://stylelint.io/user-guide/rules/selector-pseudo-class-no-unknown)|✅  |  ✔️ |<details><summary>Details</summary>`[true,{"ignorePseudoClasses":["deep","global"]}]`</details>|
-|129|[selector-pseudo-element-allowed-list](https://stylelint.io/user-guide/rules/selector-pseudo-element-allowed-list)|    |   ❌  |     |
-|130|[selector-pseudo-element-colon-notation](https://stylelint.io/user-guide/rules/selector-pseudo-element-colon-notation)|✅🔧|  ✔️ |`"double"`|
-|131|[selector-pseudo-element-disallowed-list](https://stylelint.io/user-guide/rules/selector-pseudo-element-disallowed-list)|    |   ❌  |     |
-|132|[selector-pseudo-element-no-unknown](https://stylelint.io/user-guide/rules/selector-pseudo-element-no-unknown)|✅  |  ✔️ |`true`|
-|133|[selector-type-case](https://stylelint.io/user-guide/rules/selector-type-case)|✅🔧|  ✔️ |`"lower"`|
-|134|[selector-type-no-unknown](https://stylelint.io/user-guide/rules/selector-type-no-unknown)|✅  |  ✔️ |<details><summary>Details</summary>`[true,{"ignore":["custom-elements"]}]`</details>|
-|135|[shorthand-property-no-redundant-values](https://stylelint.io/user-guide/rules/shorthand-property-no-redundant-values)|✅🔧|  ✔️ |`true`|
-|136|[string-no-newline](https://stylelint.io/user-guide/rules/string-no-newline)|✅  |  ✔️ |<details><summary>Details</summary>`[true,{"ignore":["at-rule-preludes","declaration-values"]}]`</details>|
-|137|[syntax-string-no-invalid](https://stylelint.io/user-guide/rules/syntax-string-no-invalid)|✅  |  ✔️ |`true`|
-|138|[time-min-milliseconds](https://stylelint.io/user-guide/rules/time-min-milliseconds)|    |   ❌  |     |
-|139|[unit-allowed-list](https://stylelint.io/user-guide/rules/unit-allowed-list)|    |   ❌  |     |
-|140|[unit-disallowed-list](https://stylelint.io/user-guide/rules/unit-disallowed-list)|    |   ❌  |     |
-|141|[unit-no-unknown](https://stylelint.io/user-guide/rules/unit-no-unknown)|    |   ❌  |     |
-|142|[value-keyword-case](https://stylelint.io/user-guide/rules/value-keyword-case)|✅🔧|  ✔️ |`"lower"`|
-|143|[value-no-vendor-prefix](https://stylelint.io/user-guide/rules/value-no-vendor-prefix)|✅🔧|  ✔️ |<details><summary>Details</summary>`[true,{"ignoreValues":["box","inline-box"]}]`</details>|
-|144|[@stylistic/at-rule-name-case](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/at-rule-name-case/README.md)|🔧🎨|  ✔️ |`"lower"`|
-|145|[@stylistic/at-rule-name-space-after](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/at-rule-name-space-after/README.md)|🔧🎨|  ✔️ |`"always-single-line"`|
-|146|[@stylistic/at-rule-semicolon-newline-after](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/at-rule-semicolon-newline-after/README.md)|🔧🎨|  ✔️ |`"always"`|
-|147|[@stylistic/block-closing-brace-empty-line-before](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/block-closing-brace-empty-line-before/README.md)|🔧🎨|  ✔️ |`"never"`|
-|148|[@stylistic/block-closing-brace-newline-after](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/block-closing-brace-newline-after/README.md)|🔧🎨|  ✔️ |`"always"`|
-|149|[@stylistic/block-closing-brace-newline-before](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/block-closing-brace-newline-before/README.md)|🔧🎨|  ✔️ |`"always-multi-line"`|
-|150|[@stylistic/block-closing-brace-space-before](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/block-closing-brace-space-before/README.md)|🔧🎨|  ✔️ |`"always-single-line"`|
-|151|[@stylistic/block-opening-brace-newline-after](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/block-opening-brace-newline-after/README.md)|🔧🎨|  ✔️ |`"always-multi-line"`|
-|152|[@stylistic/block-opening-brace-space-after](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/block-opening-brace-space-after/README.md)|🔧🎨|  ✔️ |`"always-single-line"`|
-|153|[@stylistic/block-opening-brace-space-before](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/block-opening-brace-space-before/README.md)|🔧🎨|  ✔️ |`"always"`|
-|154|[@stylistic/color-hex-case](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/color-hex-case/README.md)|🔧🎨|  ✔️ |`"lower"`|
-|155|[@stylistic/declaration-bang-space-after](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/declaration-bang-space-after/README.md)|🔧🎨|  ✔️ |`"never"`|
-|156|[@stylistic/declaration-bang-space-before](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/declaration-bang-space-before/README.md)|🔧🎨|  ✔️ |`"always"`|
-|157|[@stylistic/declaration-block-semicolon-newline-after](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/declaration-block-semicolon-newline-after/README.md)|🔧🎨|  ✔️ |`"always"`|
-|158|[@stylistic/declaration-block-semicolon-space-after](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/declaration-block-semicolon-space-after/README.md)|🔧🎨|  ✔️ |`"always-single-line"`|
-|159|[@stylistic/declaration-block-semicolon-space-before](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/declaration-block-semicolon-space-before/README.md)|🔧🎨|  ✔️ |`"never"`|
-|160|[@stylistic/declaration-block-trailing-semicolon](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/declaration-block-trailing-semicolon/README.md)|🔧🎨|  ✔️ |`"always"`|
-|161|[@stylistic/declaration-colon-newline-after](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/declaration-colon-newline-after/README.md)|🔧🎨|  ✔️ |`"always-multi-line"`|
-|162|[@stylistic/declaration-colon-space-after](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/declaration-colon-space-after/README.md)|🔧🎨|  ✔️ |`"always-single-line"`|
-|163|[@stylistic/declaration-colon-space-before](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/declaration-colon-space-before/README.md)|🔧🎨|  ✔️ |`"never"`|
-|164|[@stylistic/function-comma-newline-after](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/function-comma-newline-after/README.md)|🔧🎨|  ✔️ |`"always-multi-line"`|
-|165|[@stylistic/function-comma-space-after](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/function-comma-space-after/README.md)|🔧🎨|  ✔️ |`"always-single-line"`|
-|166|[@stylistic/function-comma-space-before](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/function-comma-space-before/README.md)|🔧🎨|  ✔️ |`"never"`|
-|167|[@stylistic/function-max-empty-lines](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/function-max-empty-lines/README.md)|🔧🎨|  ✔️ |`0`  |
-|168|[@stylistic/function-parentheses-newline-inside](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/function-parentheses-newline-inside/README.md)|🔧🎨|  ✔️ |`"always-multi-line"`|
-|169|[@stylistic/function-parentheses-space-inside](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/function-parentheses-space-inside/README.md)|🔧🎨|  ✔️ |`"never-single-line"`|
-|170|[@stylistic/function-whitespace-after](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/function-whitespace-after/README.md)|🔧🎨|  ✔️ |`"always"`|
-|171|[@stylistic/indentation](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/indentation/README.md)|🔧🎨|  ✔️ |`4`  |
-|172|[@stylistic/max-empty-lines](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/max-empty-lines/README.md)|🔧🎨|  ✔️ |`1`  |
-|173|[@stylistic/max-line-length](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/max-line-length/README.md)|🎨|  ✔️ |`120`|
-|174|[@stylistic/media-feature-colon-space-after](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/media-feature-colon-space-after/README.md)|🔧🎨|  ✔️ |`"always"`|
-|175|[@stylistic/media-feature-colon-space-before](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/media-feature-colon-space-before/README.md)|🔧🎨|  ✔️ |`"never"`|
-|176|[@stylistic/media-feature-name-case](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/media-feature-name-case/README.md)|🔧🎨|  ✔️ |`"lower"`|
-|177|[@stylistic/media-feature-parentheses-space-inside](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/media-feature-parentheses-space-inside/README.md)|🔧🎨|  ✔️ |`"never"`|
-|178|[@stylistic/media-feature-range-operator-space-after](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/media-feature-range-operator-space-after/README.md)|🔧🎨|  ✔️ |`"always"`|
-|179|[@stylistic/media-feature-range-operator-space-before](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/media-feature-range-operator-space-before/README.md)|🔧🎨|  ✔️ |`"always"`|
-|180|[@stylistic/media-query-list-comma-newline-after](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/media-query-list-comma-newline-after/README.md)|🔧🎨|  ✔️ |`"always-multi-line"`|
-|181|[@stylistic/media-query-list-comma-space-after](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/media-query-list-comma-space-after/README.md)|🔧🎨|  ✔️ |`"always-single-line"`|
-|182|[@stylistic/media-query-list-comma-space-before](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/media-query-list-comma-space-before/README.md)|🔧🎨|  ✔️ |`"never"`|
-|183|[@stylistic/no-empty-first-line](undefined)|🎨|  ✔️ |`true`|
-|184|[@stylistic/no-eol-whitespace](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/no-eol-whitespace/README.md)|🔧🎨|  ✔️ |`true`|
-|185|[@stylistic/no-extra-semicolons](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/no-extra-semicolons/README.md)|🔧🎨|  ✔️ |`true`|
-|186|[@stylistic/no-missing-end-of-source-newline](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/no-missing-end-of-source-newline/README.md)|🔧🎨|  ✔️ |`true`|
-|187|[@stylistic/no-multiple-whitespaces](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/no-multiple-whitespaces/README.md)|🔧🎨|  ✔️ |`true`|
-|188|[@stylistic/number-leading-zero](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/number-leading-zero/README.md)|🔧🎨|  ✔️ |`"always"`|
-|189|[@stylistic/number-no-trailing-zeros](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/number-no-trailing-zeros/README.md)|🔧🎨|  ✔️ |`true`|
-|190|[@stylistic/property-case](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/property-case/README.md)|🔧🎨|  ✔️ |`"lower"`|
-|191|[@stylistic/selector-attribute-brackets-space-inside](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-attribute-brackets-space-inside/README.md)|🔧🎨|  ✔️ |`"never"`|
-|192|[@stylistic/selector-attribute-operator-space-after](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-attribute-operator-space-after/README.md)|🔧🎨|  ✔️ |`"never"`|
-|193|[@stylistic/selector-attribute-operator-space-before](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-attribute-operator-space-before/README.md)|🔧🎨|  ✔️ |`"never"`|
-|194|[@stylistic/selector-combinator-space-after](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-combinator-space-after/README.md)|🔧🎨|  ✔️ |`"always"`|
-|195|[@stylistic/selector-combinator-space-before](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-combinator-space-before/README.md)|🔧🎨|  ✔️ |`"always"`|
-|196|[@stylistic/selector-descendant-combinator-no-non-space](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-descendant-combinator-no-non-space/README.md)|🔧🎨|  ✔️ |`true`|
-|197|[@stylistic/selector-list-comma-newline-after](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-list-comma-newline-after/README.md)|🔧🎨|  ✔️ |`"always"`|
-|198|[@stylistic/selector-list-comma-space-before](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-list-comma-space-before/README.md)|🔧🎨|  ✔️ |`"never"`|
-|199|[@stylistic/selector-max-empty-lines](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-max-empty-lines/README.md)|🔧🎨|  ✔️ |`0`  |
-|200|[@stylistic/selector-pseudo-class-case](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-pseudo-class-case/README.md)|🔧🎨|  ✔️ |`"lower"`|
-|201|[@stylistic/selector-pseudo-class-parentheses-space-inside](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-pseudo-class-parentheses-space-inside/README.md)|🔧🎨|  ✔️ |`"never"`|
-|202|[@stylistic/selector-pseudo-element-case](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-pseudo-element-case/README.md)|🔧🎨|  ✔️ |`"lower"`|
-|203|[@stylistic/string-quotes](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/string-quotes/README.md)|🔧🎨|  ✔️ |`"double"`|
-|204|[@stylistic/unit-case](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/unit-case/README.md)|🔧🎨|  ✔️ |`"lower"`|
-|205|[@stylistic/value-list-comma-newline-after](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/value-list-comma-newline-after/README.md)|🔧🎨|  ✔️ |`"always-multi-line"`|
-|206|[@stylistic/value-list-comma-space-after](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/value-list-comma-space-after/README.md)|🔧🎨|  ✔️ |`"always-single-line"`|
-|207|[@stylistic/value-list-comma-space-before](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/value-list-comma-space-before/README.md)|🔧🎨|  ✔️ |`"never"`|
-|208|[@stylistic/value-list-max-empty-lines](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/value-list-max-empty-lines/README.md)|🔧🎨|  ✔️ |`0`  |
+| 97|[property-layout-mappings](https://stylelint.io/user-guide/rules/property-layout-mappings)|🔧|  ✔️ |`undefined`|
+| 98|[property-no-deprecated](https://stylelint.io/user-guide/rules/property-no-deprecated)|✅🔧|  ✔️ |`true`|
+| 99|[property-no-unknown](https://stylelint.io/user-guide/rules/property-no-unknown)|✅  |  ✔️ |`true`|
+|100|[property-no-vendor-prefix](https://stylelint.io/user-guide/rules/property-no-vendor-prefix)|✅🔧|  ✔️ |`true`|
+|101|[relative-selector-nesting-notation](https://stylelint.io/user-guide/rules/relative-selector-nesting-notation)|🔧|  ✔️ |`undefined`|
+|102|[rule-empty-line-before](https://stylelint.io/user-guide/rules/rule-empty-line-before)|✅🔧|  ✔️ |<details><summary>Details</summary>`["always-multi-line",{"except":["first-nested"],"ignore":["after-comment"]}]`</details>|
+|103|[rule-nesting-at-rule-required-list](https://stylelint.io/user-guide/rules/rule-nesting-at-rule-required-list)|    |   ❌  |     |
+|104|[rule-selector-property-disallowed-list](https://stylelint.io/user-guide/rules/rule-selector-property-disallowed-list)|    |   ❌  |     |
+|105|[selector-anb-no-unmatchable](https://stylelint.io/user-guide/rules/selector-anb-no-unmatchable)|✅  |  ✔️ |`true`|
+|106|[selector-attribute-name-disallowed-list](https://stylelint.io/user-guide/rules/selector-attribute-name-disallowed-list)|    |   ❌  |     |
+|107|[selector-attribute-operator-allowed-list](https://stylelint.io/user-guide/rules/selector-attribute-operator-allowed-list)|    |   ❌  |     |
+|108|[selector-attribute-operator-disallowed-list](https://stylelint.io/user-guide/rules/selector-attribute-operator-disallowed-list)|    |   ❌  |     |
+|109|[selector-attribute-quotes](https://stylelint.io/user-guide/rules/selector-attribute-quotes)|✅🔧|  ✔️ |`"always"`|
+|110|[selector-class-pattern](https://stylelint.io/user-guide/rules/selector-class-pattern)|✅  |  ✔️ |<details><summary>Details</summary>`["^([a-z][a-z0-9]*)(-[a-z0-9]+)*$",{"message":"(selector) => \"Expected class selector \"${selector}\" to be kebab-case\""}]`</details>|
+|111|[selector-combinator-allowed-list](https://stylelint.io/user-guide/rules/selector-combinator-allowed-list)|    |   ❌  |     |
+|112|[selector-combinator-disallowed-list](https://stylelint.io/user-guide/rules/selector-combinator-disallowed-list)|    |   ❌  |     |
+|113|[selector-disallowed-list](https://stylelint.io/user-guide/rules/selector-disallowed-list)|    |   ❌  |     |
+|114|[selector-id-pattern](https://stylelint.io/user-guide/rules/selector-id-pattern)|✅  |  ✔️ |<details><summary>Details</summary>`["^([a-z][a-z0-9]*)(-[a-z0-9]+)*$",{"message":"(selector) => \"Expected id selector \"${selector}\" to be kebab-case\""}]`</details>|
+|115|[selector-max-attribute](https://stylelint.io/user-guide/rules/selector-max-attribute)|    |   ❌  |     |
+|116|[selector-max-class](https://stylelint.io/user-guide/rules/selector-max-class)|    |   ❌  |     |
+|117|[selector-max-combinators](https://stylelint.io/user-guide/rules/selector-max-combinators)|    |   ❌  |     |
+|118|[selector-max-compound-selectors](https://stylelint.io/user-guide/rules/selector-max-compound-selectors)|    |   ❌  |     |
+|119|[selector-max-id](https://stylelint.io/user-guide/rules/selector-max-id)|    |   ❌  |     |
+|120|[selector-max-pseudo-class](https://stylelint.io/user-guide/rules/selector-max-pseudo-class)|    |   ❌  |     |
+|121|[selector-max-specificity](https://stylelint.io/user-guide/rules/selector-max-specificity)|    |   ❌  |     |
+|122|[selector-max-type](https://stylelint.io/user-guide/rules/selector-max-type)|    |   ❌  |     |
+|123|[selector-max-universal](https://stylelint.io/user-guide/rules/selector-max-universal)|    |   ❌  |     |
+|124|[selector-nested-pattern](https://stylelint.io/user-guide/rules/selector-nested-pattern)|    |   ❌  |     |
+|125|[selector-no-deprecated](https://stylelint.io/user-guide/rules/selector-no-deprecated)|🔧|  ✔️ |`undefined`|
+|126|[selector-no-invalid](https://stylelint.io/user-guide/rules/selector-no-invalid)|    |   ❌  |     |
+|127|[selector-no-qualifying-type](https://stylelint.io/user-guide/rules/selector-no-qualifying-type)|    |   ❌  |     |
+|128|[selector-no-vendor-prefix](https://stylelint.io/user-guide/rules/selector-no-vendor-prefix)|✅🔧|  ✔️ |`true`|
+|129|[selector-not-notation](https://stylelint.io/user-guide/rules/selector-not-notation)|✅🔧|  ✔️ |`"complex"`|
+|130|[selector-pseudo-class-allowed-list](https://stylelint.io/user-guide/rules/selector-pseudo-class-allowed-list)|    |   ❌  |     |
+|131|[selector-pseudo-class-disallowed-list](https://stylelint.io/user-guide/rules/selector-pseudo-class-disallowed-list)|    |   ❌  |     |
+|132|[selector-pseudo-class-no-unknown](https://stylelint.io/user-guide/rules/selector-pseudo-class-no-unknown)|✅  |  ✔️ |<details><summary>Details</summary>`[true,{"ignorePseudoClasses":["deep","global"]}]`</details>|
+|133|[selector-pseudo-element-allowed-list](https://stylelint.io/user-guide/rules/selector-pseudo-element-allowed-list)|    |   ❌  |     |
+|134|[selector-pseudo-element-colon-notation](https://stylelint.io/user-guide/rules/selector-pseudo-element-colon-notation)|✅🔧|  ✔️ |`"double"`|
+|135|[selector-pseudo-element-disallowed-list](https://stylelint.io/user-guide/rules/selector-pseudo-element-disallowed-list)|    |   ❌  |     |
+|136|[selector-pseudo-element-no-unknown](https://stylelint.io/user-guide/rules/selector-pseudo-element-no-unknown)|✅  |  ✔️ |`true`|
+|137|[selector-type-case](https://stylelint.io/user-guide/rules/selector-type-case)|✅🔧|  ✔️ |`"lower"`|
+|138|[selector-type-no-unknown](https://stylelint.io/user-guide/rules/selector-type-no-unknown)|✅  |  ✔️ |<details><summary>Details</summary>`[true,{"ignore":["custom-elements"]}]`</details>|
+|139|[shorthand-property-no-redundant-values](https://stylelint.io/user-guide/rules/shorthand-property-no-redundant-values)|✅🔧|  ✔️ |`true`|
+|140|[string-no-newline](https://stylelint.io/user-guide/rules/string-no-newline)|✅  |  ✔️ |<details><summary>Details</summary>`[true,{"ignore":["at-rule-preludes","declaration-values"]}]`</details>|
+|141|[syntax-string-no-invalid](https://stylelint.io/user-guide/rules/syntax-string-no-invalid)|✅  |  ✔️ |`true`|
+|142|[time-min-milliseconds](https://stylelint.io/user-guide/rules/time-min-milliseconds)|    |   ❌  |     |
+|143|[unit-allowed-list](https://stylelint.io/user-guide/rules/unit-allowed-list)|    |   ❌  |     |
+|144|[unit-disallowed-list](https://stylelint.io/user-guide/rules/unit-disallowed-list)|    |   ❌  |     |
+|145|[unit-layout-mappings](https://stylelint.io/user-guide/rules/unit-layout-mappings)|🔧|  ✔️ |`undefined`|
+|146|[unit-no-unknown](https://stylelint.io/user-guide/rules/unit-no-unknown)|    |   ❌  |     |
+|147|[value-keyword-case](https://stylelint.io/user-guide/rules/value-keyword-case)|✅🔧|  ✔️ |`"lower"`|
+|148|[value-keyword-layout-mappings](https://stylelint.io/user-guide/rules/value-keyword-layout-mappings)|🔧|  ✔️ |`undefined`|
+|149|[value-no-vendor-prefix](https://stylelint.io/user-guide/rules/value-no-vendor-prefix)|✅🔧|  ✔️ |<details><summary>Details</summary>`[true,{"ignoreValues":["box","inline-box"]}]`</details>|
+|150|[@stylistic/at-rule-name-case](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/at-rule-name-case/README.md)|🔧🎨|  ✔️ |`"lower"`|
+|151|[@stylistic/at-rule-name-space-after](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/at-rule-name-space-after/README.md)|🔧🎨|  ✔️ |`"always-single-line"`|
+|152|[@stylistic/at-rule-semicolon-newline-after](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/at-rule-semicolon-newline-after/README.md)|🔧🎨|  ✔️ |`"always"`|
+|153|[@stylistic/block-closing-brace-empty-line-before](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/block-closing-brace-empty-line-before/README.md)|🔧🎨|  ✔️ |`"never"`|
+|154|[@stylistic/block-closing-brace-newline-after](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/block-closing-brace-newline-after/README.md)|🔧🎨|  ✔️ |`"always"`|
+|155|[@stylistic/block-closing-brace-newline-before](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/block-closing-brace-newline-before/README.md)|🔧🎨|  ✔️ |`"always-multi-line"`|
+|156|[@stylistic/block-closing-brace-space-before](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/block-closing-brace-space-before/README.md)|🔧🎨|  ✔️ |`"always-single-line"`|
+|157|[@stylistic/block-opening-brace-newline-after](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/block-opening-brace-newline-after/README.md)|🔧🎨|  ✔️ |`"always-multi-line"`|
+|158|[@stylistic/block-opening-brace-space-after](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/block-opening-brace-space-after/README.md)|🔧🎨|  ✔️ |`"always-single-line"`|
+|159|[@stylistic/block-opening-brace-space-before](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/block-opening-brace-space-before/README.md)|🔧🎨|  ✔️ |`"always"`|
+|160|[@stylistic/color-hex-case](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/color-hex-case/README.md)|🔧🎨|  ✔️ |`"lower"`|
+|161|[@stylistic/declaration-bang-space-after](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/declaration-bang-space-after/README.md)|🔧🎨|  ✔️ |`"never"`|
+|162|[@stylistic/declaration-bang-space-before](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/declaration-bang-space-before/README.md)|🔧🎨|  ✔️ |`"always"`|
+|163|[@stylistic/declaration-block-semicolon-newline-after](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/declaration-block-semicolon-newline-after/README.md)|🔧🎨|  ✔️ |`"always"`|
+|164|[@stylistic/declaration-block-semicolon-space-after](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/declaration-block-semicolon-space-after/README.md)|🔧🎨|  ✔️ |`"always-single-line"`|
+|165|[@stylistic/declaration-block-semicolon-space-before](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/declaration-block-semicolon-space-before/README.md)|🔧🎨|  ✔️ |`"never"`|
+|166|[@stylistic/declaration-block-trailing-semicolon](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/declaration-block-trailing-semicolon/README.md)|🔧🎨|  ✔️ |`"always"`|
+|167|[@stylistic/declaration-colon-newline-after](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/declaration-colon-newline-after/README.md)|🔧🎨|  ✔️ |`"always-multi-line"`|
+|168|[@stylistic/declaration-colon-space-after](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/declaration-colon-space-after/README.md)|🔧🎨|  ✔️ |`"always-single-line"`|
+|169|[@stylistic/declaration-colon-space-before](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/declaration-colon-space-before/README.md)|🔧🎨|  ✔️ |`"never"`|
+|170|[@stylistic/function-comma-newline-after](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/function-comma-newline-after/README.md)|🔧🎨|  ✔️ |`"always-multi-line"`|
+|171|[@stylistic/function-comma-space-after](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/function-comma-space-after/README.md)|🔧🎨|  ✔️ |`"always-single-line"`|
+|172|[@stylistic/function-comma-space-before](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/function-comma-space-before/README.md)|🔧🎨|  ✔️ |`"never"`|
+|173|[@stylistic/function-max-empty-lines](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/function-max-empty-lines/README.md)|🔧🎨|  ✔️ |`0`  |
+|174|[@stylistic/function-parentheses-newline-inside](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/function-parentheses-newline-inside/README.md)|🔧🎨|  ✔️ |`"always-multi-line"`|
+|175|[@stylistic/function-parentheses-space-inside](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/function-parentheses-space-inside/README.md)|🔧🎨|  ✔️ |`"never-single-line"`|
+|176|[@stylistic/function-whitespace-after](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/function-whitespace-after/README.md)|🔧🎨|  ✔️ |`"always"`|
+|177|[@stylistic/indentation](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/indentation/README.md)|🔧🎨|  ✔️ |`4`  |
+|178|[@stylistic/max-empty-lines](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/max-empty-lines/README.md)|🔧🎨|  ✔️ |`1`  |
+|179|[@stylistic/max-line-length](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/max-line-length/README.md)|🎨|  ✔️ |`120`|
+|180|[@stylistic/media-feature-colon-space-after](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/media-feature-colon-space-after/README.md)|🔧🎨|  ✔️ |`"always"`|
+|181|[@stylistic/media-feature-colon-space-before](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/media-feature-colon-space-before/README.md)|🔧🎨|  ✔️ |`"never"`|
+|182|[@stylistic/media-feature-name-case](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/media-feature-name-case/README.md)|🔧🎨|  ✔️ |`"lower"`|
+|183|[@stylistic/media-feature-parentheses-space-inside](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/media-feature-parentheses-space-inside/README.md)|🔧🎨|  ✔️ |`"never"`|
+|184|[@stylistic/media-feature-range-operator-space-after](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/media-feature-range-operator-space-after/README.md)|🔧🎨|  ✔️ |`"always"`|
+|185|[@stylistic/media-feature-range-operator-space-before](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/media-feature-range-operator-space-before/README.md)|🔧🎨|  ✔️ |`"always"`|
+|186|[@stylistic/media-query-list-comma-newline-after](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/media-query-list-comma-newline-after/README.md)|🔧🎨|  ✔️ |`"always-multi-line"`|
+|187|[@stylistic/media-query-list-comma-space-after](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/media-query-list-comma-space-after/README.md)|🔧🎨|  ✔️ |`"always-single-line"`|
+|188|[@stylistic/media-query-list-comma-space-before](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/media-query-list-comma-space-before/README.md)|🔧🎨|  ✔️ |`"never"`|
+|189|[@stylistic/no-empty-first-line](undefined)|🎨|  ✔️ |`true`|
+|190|[@stylistic/no-eol-whitespace](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/no-eol-whitespace/README.md)|🔧🎨|  ✔️ |`true`|
+|191|[@stylistic/no-extra-semicolons](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/no-extra-semicolons/README.md)|🔧🎨|  ✔️ |`true`|
+|192|[@stylistic/no-missing-end-of-source-newline](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/no-missing-end-of-source-newline/README.md)|🔧🎨|  ✔️ |`true`|
+|193|[@stylistic/no-multiple-whitespaces](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/no-multiple-whitespaces/README.md)|🔧🎨|  ✔️ |`true`|
+|194|[@stylistic/number-leading-zero](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/number-leading-zero/README.md)|🔧🎨|  ✔️ |`"always"`|
+|195|[@stylistic/number-no-trailing-zeros](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/number-no-trailing-zeros/README.md)|🔧🎨|  ✔️ |`true`|
+|196|[@stylistic/property-case](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/property-case/README.md)|🔧🎨|  ✔️ |`"lower"`|
+|197|[@stylistic/selector-attribute-brackets-space-inside](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-attribute-brackets-space-inside/README.md)|🔧🎨|  ✔️ |`"never"`|
+|198|[@stylistic/selector-attribute-operator-space-after](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-attribute-operator-space-after/README.md)|🔧🎨|  ✔️ |`"never"`|
+|199|[@stylistic/selector-attribute-operator-space-before](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-attribute-operator-space-before/README.md)|🔧🎨|  ✔️ |`"never"`|
+|200|[@stylistic/selector-combinator-space-after](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-combinator-space-after/README.md)|🔧🎨|  ✔️ |`"always"`|
+|201|[@stylistic/selector-combinator-space-before](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-combinator-space-before/README.md)|🔧🎨|  ✔️ |`"always"`|
+|202|[@stylistic/selector-descendant-combinator-no-non-space](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-descendant-combinator-no-non-space/README.md)|🔧🎨|  ✔️ |`true`|
+|203|[@stylistic/selector-list-comma-newline-after](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-list-comma-newline-after/README.md)|🔧🎨|  ✔️ |`"always"`|
+|204|[@stylistic/selector-list-comma-space-before](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-list-comma-space-before/README.md)|🔧🎨|  ✔️ |`"never"`|
+|205|[@stylistic/selector-max-empty-lines](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-max-empty-lines/README.md)|🔧🎨|  ✔️ |`0`  |
+|206|[@stylistic/selector-pseudo-class-case](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-pseudo-class-case/README.md)|🔧🎨|  ✔️ |`"lower"`|
+|207|[@stylistic/selector-pseudo-class-parentheses-space-inside](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-pseudo-class-parentheses-space-inside/README.md)|🔧🎨|  ✔️ |`"never"`|
+|208|[@stylistic/selector-pseudo-element-case](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-pseudo-element-case/README.md)|🔧🎨|  ✔️ |`"lower"`|
+|209|[@stylistic/string-quotes](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/string-quotes/README.md)|🔧🎨|  ✔️ |`"double"`|
+|210|[@stylistic/unit-case](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/unit-case/README.md)|🔧🎨|  ✔️ |`"lower"`|
+|211|[@stylistic/value-list-comma-newline-after](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/value-list-comma-newline-after/README.md)|🔧🎨|  ✔️ |`"always-multi-line"`|
+|212|[@stylistic/value-list-comma-space-after](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/value-list-comma-space-after/README.md)|🔧🎨|  ✔️ |`"always-single-line"`|
+|213|[@stylistic/value-list-comma-space-before](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/value-list-comma-space-before/README.md)|🔧🎨|  ✔️ |`"never"`|
+|214|[@stylistic/value-list-max-empty-lines](https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/value-list-max-empty-lines/README.md)|🔧🎨|  ✔️ |`0`  |
 
 # Changelog
 [CHANGELOG.md](CHANGELOG.md)

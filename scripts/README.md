@@ -12,10 +12,19 @@ npm i stylelint-config-plus -D
 ```
 
 ## Usage
+### ESM
 ```js
 // stylelint.config.js
 export default {
-    extends: ["stylelint-config-plus"]
+    extends: ['stylelint-config-plus']
+};
+```
+
+### CommonJS
+```js
+// stylelint.config.cjs
+module.exports = {
+    extends: ['stylelint-config-plus']
 };
 ```
 

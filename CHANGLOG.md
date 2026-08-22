@@ -1,5 +1,12 @@
 ## Changelog
 
+- 1.2.0
+    - added ESM and CommonJS support
+    - moved source files from `lib` to `src`
+    - added esbuild output in `dist`
+    - updated stylelint-config-html to v2
+    - updated dependencies
+
 - 1.1.4
     - updated stylelint v17
 

@@ -13,11 +13,12 @@ const sh = (cmd, options = {}) => {
         cp.on('error', (err) => {
             reject(err);
         });
-        cp.on('close', () => {
-            resolve();
-        });
-        cp.on('exit', () => {
-            resolve();
+        cp.on('close', (code) => {
+            if (code === 0) {
+                resolve();
+            } else {
+                reject(new Error(`Command exited with code ${code}: ${cmd}`));
+            }
         });
     });
 };
@@ -59,11 +60,13 @@ for (const txtName of list) {
 const cmd = getStylelintCmd('test/formatted/*.*');
 console.log(cmd);
 
-it('style lint 1', async () => {
+it('style lint 1', async function() {
+    this.timeout(30000);
     await sh(cmd);
 });
 
-it('style lint 2', async () => {
+it('style lint 2', async function() {
+    this.timeout(30000);
     await sh(cmd);
 });
 

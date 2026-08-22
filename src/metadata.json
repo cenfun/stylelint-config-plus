@@ -1,6 +1,6 @@
 {
-    "version": "17.6.0",
-    "date": "3/30/2026",
+    "version": "17.14.1",
+    "date": "8/22/2026",
     "rules": {
         "alpha-value-notation": {
             "url": "https://stylelint.io/user-guide/rules/alpha-value-notation",
@@ -579,6 +579,10 @@
         "property-disallowed-list": {
             "url": "https://stylelint.io/user-guide/rules/property-disallowed-list"
         },
+        "property-layout-mappings": {
+            "url": "https://stylelint.io/user-guide/rules/property-layout-mappings",
+            "fixable": true
+        },
         "property-no-deprecated": {
             "url": "https://stylelint.io/user-guide/rules/property-no-deprecated",
             "fixable": true,
@@ -595,6 +599,10 @@
             "fixable": true,
             "standard": true,
             "value": true
+        },
+        "relative-selector-nesting-notation": {
+            "url": "https://stylelint.io/user-guide/rules/relative-selector-nesting-notation",
+            "fixable": true
         },
         "rule-empty-line-before": {
             "url": "https://stylelint.io/user-guide/rules/rule-empty-line-before",
@@ -696,6 +704,13 @@
         },
         "selector-nested-pattern": {
             "url": "https://stylelint.io/user-guide/rules/selector-nested-pattern"
+        },
+        "selector-no-deprecated": {
+            "url": "https://stylelint.io/user-guide/rules/selector-no-deprecated",
+            "fixable": true
+        },
+        "selector-no-invalid": {
+            "url": "https://stylelint.io/user-guide/rules/selector-no-invalid"
         },
         "selector-no-qualifying-type": {
             "url": "https://stylelint.io/user-guide/rules/selector-no-qualifying-type"
@@ -800,6 +815,10 @@
         "unit-disallowed-list": {
             "url": "https://stylelint.io/user-guide/rules/unit-disallowed-list"
         },
+        "unit-layout-mappings": {
+            "url": "https://stylelint.io/user-guide/rules/unit-layout-mappings",
+            "fixable": true
+        },
         "unit-no-unknown": {
             "url": "https://stylelint.io/user-guide/rules/unit-no-unknown"
         },
@@ -808,6 +827,10 @@
             "fixable": true,
             "standard": true,
             "value": "lower"
+        },
+        "value-keyword-layout-mappings": {
+            "url": "https://stylelint.io/user-guide/rules/value-keyword-layout-mappings",
+            "fixable": true
         },
         "value-no-vendor-prefix": {
             "url": "https://stylelint.io/user-guide/rules/value-no-vendor-prefix",

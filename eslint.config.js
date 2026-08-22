@@ -4,5 +4,8 @@ import plus from 'eslint-config-plus';
 
 // https://eslint.org/docs/latest/use/configure/configuration-files
 export default [
+    {
+        ignores: ['dist/**']
+    },
     plus
 ];
