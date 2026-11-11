@@ -1,12 +1,14 @@
 import os from 'node:os';
 import fs from 'node:fs';
 import path from 'node:path';
-import { fileURLToPath, pathToFileURL } from 'node:url';
+import { fileURLToPath } from 'node:url';
 import { buildSync } from 'esbuild';
 import EC from 'eight-colors';
 import MG from 'markdown-grid';
 import recommended from 'stylelint-config-recommended';
 import standard from 'stylelint-config-standard';
+import stylelint from 'stylelint';
+import stylisticPlugin from '@stylistic/stylelint-plugin';
 import myOverrideRules from '../src/rules-override.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -14,9 +16,8 @@ const rootPath = path.resolve(__dirname, '..');
 const srcPath = path.join(rootPath, 'src');
 const distPath = path.join(rootPath, 'dist');
 const stylelintPath = path.dirname(fileURLToPath(import.meta.resolve('stylelint/package.json')));
-const builtInRulesUrl = pathToFileURL(path.join(stylelintPath, 'lib/rules/index.mjs'));
-const { default: builtInRules } = await import(builtInRulesUrl);
-const stylisticPluginPath = path.dirname(fileURLToPath(import.meta.resolve('@stylistic/stylelint-plugin')));
+const builtInRules = stylelint.rules;
+const stylisticRulesMetadata = new Map(stylisticPlugin.map((plugin) => [plugin.ruleName, plugin.rule.meta]));
 
 const jsonToStr = (obj, indent = 4, replacement = null) => {
     return JSON.stringify(obj, (key, value) => {
@@ -123,7 +124,7 @@ const checkRules = (metadata) => {
         const name = `[${key}](${item.url})`;
 
         const type = getRuleType(item);
-        const enable = Boolean(type);
+        const enable = Object.hasOwn(item, 'value');
 
         let icon;
         let value = '';
@@ -228,7 +229,9 @@ const start = async () => {
     for (const key of keys) {
         const rule = await builtInRules[key];
         // console.log(key, rule);
-        rules[key] = rule.meta;
+        rules[key] = {
+            ... rule.meta
+        };
     }
 
 
@@ -245,7 +248,7 @@ const start = async () => {
             item.recommended = true;
             item.value = recommendedRules[key];
         } else {
-            EC.logRed(`not found recommended rule: ${key}`);
+            throw new Error(`Unknown recommended rule: ${key}`);
         }
     });
 
@@ -262,7 +265,7 @@ const start = async () => {
             item.standard = true;
             item.value = standardRules[key];
         } else {
-            EC.logRed(`not found standard rule: ${key}`);
+            throw new Error(`Unknown standard rule: ${key}`);
         }
     });
 
@@ -278,12 +281,20 @@ const start = async () => {
     const stylisticKeys = Object.keys(stylisticRules);
     for (const key of stylisticKeys) {
         const value = stylisticRules[key];
-        const id = key.replace('@stylistic/', '');
-        const ruleUrl = pathToFileURL(path.join(stylisticPluginPath, 'rules', id, 'index.js'));
-        const item = await import(ruleUrl);
+        if (!key.startsWith('@stylistic/')) {
+            if (!rules[key]) {
+                throw new Error(`Unknown core rule in stylistic config: ${key}`);
+            }
+            rules[key].value = value;
+            continue;
+        }
 
+        const meta = stylisticRulesMetadata.get(key);
+        if (!meta) {
+            throw new Error(`Unknown stylistic rule: ${key}`);
+        }
         rules[key] = {
-            ... item.meta,
+            ... meta,
             stylistic: true,
             value
         };
@@ -330,8 +341,9 @@ const start = async () => {
     const buildOptions = {
         entryPoints: [entryPath],
         bundle: true,
+        packages: 'external',
         platform: 'node',
-        target: 'node20',
+        target: 'node22',
         logLevel: 'silent'
     };
 

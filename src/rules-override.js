@@ -45,7 +45,6 @@ export default {
     }],
 
     // stylistic
-    '@stylistic/indentation': 4,
-    '@stylistic/declaration-block-semicolon-newline-after': 'always'
+    '@stylistic/indentation': 4
 
 };

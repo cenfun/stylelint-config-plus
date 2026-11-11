@@ -1,6 +1,6 @@
 {
-    "version": "17.14.1",
-    "date": "8/22/2026",
+    "version": "18.0.0",
+    "date": "11/11/2026",
     "rules": {
         "alpha-value-notation": {
             "url": "https://stylelint.io/user-guide/rules/alpha-value-notation",
@@ -21,6 +21,11 @@
         },
         "annotation-no-unknown": {
             "url": "https://stylelint.io/user-guide/rules/annotation-no-unknown",
+            "recommended": true,
+            "value": true
+        },
+        "at-charset-rule-no-invalid": {
+            "url": "https://stylelint.io/user-guide/rules/at-charset-rule-no-invalid",
             "recommended": true,
             "value": true
         },
@@ -271,11 +276,6 @@
             "recommended": true,
             "value": true
         },
-        "declaration-block-single-line-max-declarations": {
-            "url": "https://stylelint.io/user-guide/rules/declaration-block-single-line-max-declarations",
-            "standard": true,
-            "value": 1
-        },
         "declaration-empty-line-before": {
             "url": "https://stylelint.io/user-guide/rules/declaration-empty-line-before",
             "fixable": true,
@@ -296,6 +296,9 @@
         },
         "declaration-no-important": {
             "url": "https://stylelint.io/user-guide/rules/declaration-no-important"
+        },
+        "declaration-property-custom-property-allowed-list": {
+            "url": "https://stylelint.io/user-guide/rules/declaration-property-custom-property-allowed-list"
         },
         "declaration-property-max-values": {
             "url": "https://stylelint.io/user-guide/rules/declaration-property-max-values"
@@ -707,13 +710,22 @@
         },
         "selector-no-deprecated": {
             "url": "https://stylelint.io/user-guide/rules/selector-no-deprecated",
-            "fixable": true
+            "fixable": true,
+            "recommended": true,
+            "value": true
         },
         "selector-no-invalid": {
-            "url": "https://stylelint.io/user-guide/rules/selector-no-invalid"
+            "url": "https://stylelint.io/user-guide/rules/selector-no-invalid",
+            "recommended": true,
+            "value": true
         },
         "selector-no-qualifying-type": {
             "url": "https://stylelint.io/user-guide/rules/selector-no-qualifying-type"
+        },
+        "selector-no-unmatchable": {
+            "url": "https://stylelint.io/user-guide/rules/selector-no-unmatchable",
+            "recommended": true,
+            "value": true
         },
         "selector-no-vendor-prefix": {
             "url": "https://stylelint.io/user-guide/rules/selector-no-vendor-prefix",
@@ -832,6 +844,11 @@
             "url": "https://stylelint.io/user-guide/rules/value-keyword-layout-mappings",
             "fixable": true
         },
+        "value-no-invalid": {
+            "url": "https://stylelint.io/user-guide/rules/value-no-invalid",
+            "recommended": true,
+            "value": true
+        },
         "value-no-vendor-prefix": {
             "url": "https://stylelint.io/user-guide/rules/value-no-vendor-prefix",
             "fixable": true,
@@ -846,394 +863,593 @@
                 }
             ]
         },
+        "value-type-custom-property-required-list": {
+            "url": "https://stylelint.io/user-guide/rules/value-type-custom-property-required-list"
+        },
         "@stylistic/at-rule-name-case": {
-            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/at-rule-name-case/README.md",
+            "url": "https://stylelint-stylistic.github.io/rules/at-rule-name-case",
             "fixable": true,
             "stylistic": true,
-            "value": "lower"
+            "value": [
+                "lower",
+                {}
+            ]
         },
         "@stylistic/at-rule-name-space-after": {
-            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/at-rule-name-space-after/README.md",
+            "url": "https://stylelint-stylistic.github.io/rules/at-rule-name-space-after",
             "fixable": true,
             "stylistic": true,
-            "value": "always-single-line"
+            "value": [
+                "always-single-line",
+                {}
+            ]
         },
         "@stylistic/at-rule-semicolon-newline-after": {
-            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/at-rule-semicolon-newline-after/README.md",
+            "url": "https://stylelint-stylistic.github.io/rules/at-rule-semicolon-newline-after",
             "fixable": true,
             "stylistic": true,
-            "value": "always"
+            "value": [
+                "always",
+                {}
+            ]
         },
         "@stylistic/block-closing-brace-empty-line-before": {
-            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/block-closing-brace-empty-line-before/README.md",
+            "url": "https://stylelint-stylistic.github.io/rules/block-closing-brace-empty-line-before",
             "fixable": true,
             "stylistic": true,
-            "value": "never"
+            "value": [
+                "never",
+                {}
+            ]
         },
         "@stylistic/block-closing-brace-newline-after": {
-            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/block-closing-brace-newline-after/README.md",
+            "url": "https://stylelint-stylistic.github.io/rules/block-closing-brace-newline-after",
             "fixable": true,
             "stylistic": true,
-            "value": "always"
+            "value": [
+                "always",
+                {}
+            ]
         },
         "@stylistic/block-closing-brace-newline-before": {
-            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/block-closing-brace-newline-before/README.md",
+            "url": "https://stylelint-stylistic.github.io/rules/block-closing-brace-newline-before",
             "fixable": true,
             "stylistic": true,
-            "value": "always-multi-line"
+            "value": [
+                "always-multi-line",
+                {}
+            ]
         },
         "@stylistic/block-closing-brace-space-before": {
-            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/block-closing-brace-space-before/README.md",
+            "url": "https://stylelint-stylistic.github.io/rules/block-closing-brace-space-before",
             "fixable": true,
             "stylistic": true,
-            "value": "always-single-line"
+            "value": [
+                "always-single-line",
+                {}
+            ]
         },
         "@stylistic/block-opening-brace-newline-after": {
-            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/block-opening-brace-newline-after/README.md",
+            "url": "https://stylelint-stylistic.github.io/rules/block-opening-brace-newline-after",
             "fixable": true,
             "stylistic": true,
-            "value": "always-multi-line"
+            "value": [
+                "always-multi-line",
+                {}
+            ]
         },
         "@stylistic/block-opening-brace-space-after": {
-            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/block-opening-brace-space-after/README.md",
+            "url": "https://stylelint-stylistic.github.io/rules/block-opening-brace-space-after",
             "fixable": true,
             "stylistic": true,
-            "value": "always-single-line"
+            "value": [
+                "always-single-line",
+                {}
+            ]
         },
         "@stylistic/block-opening-brace-space-before": {
-            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/block-opening-brace-space-before/README.md",
+            "url": "https://stylelint-stylistic.github.io/rules/block-opening-brace-space-before",
             "fixable": true,
             "stylistic": true,
-            "value": "always"
+            "value": [
+                "always",
+                {}
+            ]
         },
         "@stylistic/color-hex-case": {
-            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/color-hex-case/README.md",
+            "url": "https://stylelint-stylistic.github.io/rules/color-hex-case",
             "fixable": true,
             "stylistic": true,
-            "value": "lower"
+            "value": [
+                "lower",
+                {}
+            ]
         },
         "@stylistic/declaration-bang-space-after": {
-            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/declaration-bang-space-after/README.md",
+            "url": "https://stylelint-stylistic.github.io/rules/declaration-bang-space-after",
             "fixable": true,
             "stylistic": true,
-            "value": "never"
+            "value": [
+                "never",
+                {}
+            ]
         },
         "@stylistic/declaration-bang-space-before": {
-            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/declaration-bang-space-before/README.md",
+            "url": "https://stylelint-stylistic.github.io/rules/declaration-bang-space-before",
             "fixable": true,
             "stylistic": true,
-            "value": "always"
+            "value": [
+                "always",
+                {}
+            ]
         },
         "@stylistic/declaration-block-semicolon-newline-after": {
-            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/declaration-block-semicolon-newline-after/README.md",
+            "url": "https://stylelint-stylistic.github.io/rules/declaration-block-semicolon-newline-after",
             "fixable": true,
             "stylistic": true,
-            "value": "always",
-            "originalValue": "always-multi-line"
+            "value": [
+                "always-multi-line",
+                {}
+            ]
         },
         "@stylistic/declaration-block-semicolon-space-after": {
-            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/declaration-block-semicolon-space-after/README.md",
+            "url": "https://stylelint-stylistic.github.io/rules/declaration-block-semicolon-space-after",
             "fixable": true,
             "stylistic": true,
-            "value": "always-single-line"
+            "value": [
+                "always-single-line",
+                {}
+            ]
         },
         "@stylistic/declaration-block-semicolon-space-before": {
-            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/declaration-block-semicolon-space-before/README.md",
+            "url": "https://stylelint-stylistic.github.io/rules/declaration-block-semicolon-space-before",
             "fixable": true,
             "stylistic": true,
-            "value": "never"
+            "value": [
+                "never",
+                {}
+            ]
+        },
+        "@stylistic/declaration-block-single-line-max-declarations": {
+            "url": "https://stylelint-stylistic.github.io/rules/declaration-block-single-line-max-declarations",
+            "fixable": true,
+            "stylistic": true,
+            "value": [
+                1,
+                {}
+            ]
         },
         "@stylistic/declaration-block-trailing-semicolon": {
-            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/declaration-block-trailing-semicolon/README.md",
+            "url": "https://stylelint-stylistic.github.io/rules/declaration-block-trailing-semicolon",
             "fixable": true,
             "stylistic": true,
-            "value": "always"
+            "value": [
+                "always",
+                {}
+            ]
         },
         "@stylistic/declaration-colon-newline-after": {
-            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/declaration-colon-newline-after/README.md",
+            "url": "https://stylelint-stylistic.github.io/rules/declaration-colon-newline-after",
             "fixable": true,
             "stylistic": true,
-            "value": "always-multi-line"
+            "value": [
+                "always-multi-line",
+                {}
+            ]
         },
         "@stylistic/declaration-colon-space-after": {
-            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/declaration-colon-space-after/README.md",
+            "url": "https://stylelint-stylistic.github.io/rules/declaration-colon-space-after",
             "fixable": true,
             "stylistic": true,
-            "value": "always-single-line"
+            "value": [
+                "always-single-line",
+                {}
+            ]
         },
         "@stylistic/declaration-colon-space-before": {
-            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/declaration-colon-space-before/README.md",
+            "url": "https://stylelint-stylistic.github.io/rules/declaration-colon-space-before",
             "fixable": true,
             "stylistic": true,
-            "value": "never"
+            "value": [
+                "never",
+                {}
+            ]
         },
         "@stylistic/function-comma-newline-after": {
-            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/function-comma-newline-after/README.md",
+            "url": "https://stylelint-stylistic.github.io/rules/function-comma-newline-after",
             "fixable": true,
             "stylistic": true,
-            "value": "always-multi-line"
+            "value": [
+                "always-multi-line",
+                {}
+            ]
         },
         "@stylistic/function-comma-space-after": {
-            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/function-comma-space-after/README.md",
+            "url": "https://stylelint-stylistic.github.io/rules/function-comma-space-after",
             "fixable": true,
             "stylistic": true,
-            "value": "always-single-line"
+            "value": [
+                "always-single-line",
+                {}
+            ]
         },
         "@stylistic/function-comma-space-before": {
-            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/function-comma-space-before/README.md",
+            "url": "https://stylelint-stylistic.github.io/rules/function-comma-space-before",
             "fixable": true,
             "stylistic": true,
-            "value": "never"
+            "value": [
+                "never",
+                {}
+            ]
         },
         "@stylistic/function-max-empty-lines": {
-            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/function-max-empty-lines/README.md",
+            "url": "https://stylelint-stylistic.github.io/rules/function-max-empty-lines",
             "fixable": true,
             "stylistic": true,
-            "value": 0
+            "value": [
+                0,
+                {}
+            ]
         },
         "@stylistic/function-parentheses-newline-inside": {
-            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/function-parentheses-newline-inside/README.md",
+            "url": "https://stylelint-stylistic.github.io/rules/function-parentheses-newline-inside",
             "fixable": true,
             "stylistic": true,
-            "value": "always-multi-line"
+            "value": [
+                "always-multi-line",
+                {}
+            ]
         },
         "@stylistic/function-parentheses-space-inside": {
-            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/function-parentheses-space-inside/README.md",
+            "url": "https://stylelint-stylistic.github.io/rules/function-parentheses-space-inside",
             "fixable": true,
             "stylistic": true,
-            "value": "never-single-line"
+            "value": [
+                "never-single-line",
+                {}
+            ]
         },
         "@stylistic/function-whitespace-after": {
-            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/function-whitespace-after/README.md",
+            "url": "https://stylelint-stylistic.github.io/rules/function-whitespace-after",
             "fixable": true,
             "stylistic": true,
-            "value": "always"
+            "value": [
+                "always",
+                {}
+            ]
         },
         "@stylistic/indentation": {
-            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/indentation/README.md",
+            "url": "https://stylelint-stylistic.github.io/rules/indentation",
             "fixable": true,
             "stylistic": true,
             "value": 4,
-            "originalValue": 2
+            "originalValue": [
+                2,
+                {}
+            ]
         },
         "@stylistic/max-empty-lines": {
-            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/max-empty-lines/README.md",
+            "url": "https://stylelint-stylistic.github.io/rules/max-empty-lines",
             "fixable": true,
             "stylistic": true,
-            "value": 1
+            "value": [
+                1,
+                {}
+            ]
         },
         "@stylistic/max-line-length": {
-            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/max-line-length/README.md",
+            "url": "https://stylelint-stylistic.github.io/rules/max-line-length",
             "stylistic": true,
-            "value": 120
+            "value": [
+                120,
+                {}
+            ]
         },
         "@stylistic/media-feature-colon-space-after": {
-            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/media-feature-colon-space-after/README.md",
+            "url": "https://stylelint-stylistic.github.io/rules/media-feature-colon-space-after",
             "fixable": true,
             "stylistic": true,
-            "value": "always"
+            "value": [
+                "always",
+                {}
+            ]
         },
         "@stylistic/media-feature-colon-space-before": {
-            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/media-feature-colon-space-before/README.md",
+            "url": "https://stylelint-stylistic.github.io/rules/media-feature-colon-space-before",
             "fixable": true,
             "stylistic": true,
-            "value": "never"
+            "value": [
+                "never",
+                {}
+            ]
         },
         "@stylistic/media-feature-name-case": {
-            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/media-feature-name-case/README.md",
+            "url": "https://stylelint-stylistic.github.io/rules/media-feature-name-case",
             "fixable": true,
             "stylistic": true,
-            "value": "lower"
+            "value": [
+                "lower",
+                {}
+            ]
         },
         "@stylistic/media-feature-parentheses-space-inside": {
-            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/media-feature-parentheses-space-inside/README.md",
+            "url": "https://stylelint-stylistic.github.io/rules/media-feature-parentheses-space-inside",
             "fixable": true,
             "stylistic": true,
-            "value": "never"
+            "value": [
+                "never",
+                {}
+            ]
         },
         "@stylistic/media-feature-range-operator-space-after": {
-            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/media-feature-range-operator-space-after/README.md",
+            "url": "https://stylelint-stylistic.github.io/rules/media-feature-range-operator-space-after",
             "fixable": true,
             "stylistic": true,
-            "value": "always"
+            "value": [
+                "always",
+                {}
+            ]
         },
         "@stylistic/media-feature-range-operator-space-before": {
-            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/media-feature-range-operator-space-before/README.md",
+            "url": "https://stylelint-stylistic.github.io/rules/media-feature-range-operator-space-before",
             "fixable": true,
             "stylistic": true,
-            "value": "always"
+            "value": [
+                "always",
+                {}
+            ]
         },
         "@stylistic/media-query-list-comma-newline-after": {
-            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/media-query-list-comma-newline-after/README.md",
+            "url": "https://stylelint-stylistic.github.io/rules/media-query-list-comma-newline-after",
             "fixable": true,
             "stylistic": true,
-            "value": "always-multi-line"
+            "value": [
+                "always-multi-line",
+                {}
+            ]
         },
         "@stylistic/media-query-list-comma-space-after": {
-            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/media-query-list-comma-space-after/README.md",
+            "url": "https://stylelint-stylistic.github.io/rules/media-query-list-comma-space-after",
             "fixable": true,
             "stylistic": true,
-            "value": "always-single-line"
+            "value": [
+                "always-single-line",
+                {}
+            ]
         },
         "@stylistic/media-query-list-comma-space-before": {
-            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/media-query-list-comma-space-before/README.md",
+            "url": "https://stylelint-stylistic.github.io/rules/media-query-list-comma-space-before",
             "fixable": true,
             "stylistic": true,
-            "value": "never"
+            "value": [
+                "never",
+                {}
+            ]
         },
         "@stylistic/no-empty-first-line": {
+            "url": "https://stylelint-stylistic.github.io/rules/no-empty-first-line",
+            "fixable": true,
             "stylistic": true,
-            "value": true
+            "value": [
+                true,
+                {}
+            ]
         },
         "@stylistic/no-eol-whitespace": {
-            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/no-eol-whitespace/README.md",
+            "url": "https://stylelint-stylistic.github.io/rules/no-eol-whitespace",
             "fixable": true,
             "stylistic": true,
-            "value": true
+            "value": [
+                true,
+                {}
+            ]
         },
         "@stylistic/no-extra-semicolons": {
-            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/no-extra-semicolons/README.md",
+            "url": "https://stylelint-stylistic.github.io/rules/no-extra-semicolons",
             "fixable": true,
             "stylistic": true,
-            "value": true
+            "value": [
+                true,
+                {}
+            ]
         },
         "@stylistic/no-missing-end-of-source-newline": {
-            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/no-missing-end-of-source-newline/README.md",
+            "url": "https://stylelint-stylistic.github.io/rules/no-missing-end-of-source-newline",
             "fixable": true,
             "stylistic": true,
-            "value": true
-        },
-        "@stylistic/no-multiple-whitespaces": {
-            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/no-multiple-whitespaces/README.md",
-            "fixable": true,
-            "stylistic": true,
-            "value": true
+            "value": [
+                true,
+                {}
+            ]
         },
         "@stylistic/number-leading-zero": {
-            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/number-leading-zero/README.md",
+            "url": "https://stylelint-stylistic.github.io/rules/number-leading-zero",
             "fixable": true,
             "stylistic": true,
-            "value": "always"
+            "value": [
+                "always",
+                {}
+            ]
         },
         "@stylistic/number-no-trailing-zeros": {
-            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/number-no-trailing-zeros/README.md",
+            "url": "https://stylelint-stylistic.github.io/rules/number-no-trailing-zeros",
             "fixable": true,
             "stylistic": true,
-            "value": true
+            "value": [
+                true,
+                {}
+            ]
         },
         "@stylistic/property-case": {
-            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/property-case/README.md",
+            "url": "https://stylelint-stylistic.github.io/rules/property-case",
             "fixable": true,
             "stylistic": true,
-            "value": "lower"
+            "value": [
+                "lower",
+                {}
+            ]
         },
         "@stylistic/selector-attribute-brackets-space-inside": {
-            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-attribute-brackets-space-inside/README.md",
+            "url": "https://stylelint-stylistic.github.io/rules/selector-attribute-brackets-space-inside",
             "fixable": true,
             "stylistic": true,
-            "value": "never"
+            "value": [
+                "never",
+                {}
+            ]
         },
         "@stylistic/selector-attribute-operator-space-after": {
-            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-attribute-operator-space-after/README.md",
+            "url": "https://stylelint-stylistic.github.io/rules/selector-attribute-operator-space-after",
             "fixable": true,
             "stylistic": true,
-            "value": "never"
+            "value": [
+                "never",
+                {}
+            ]
         },
         "@stylistic/selector-attribute-operator-space-before": {
-            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-attribute-operator-space-before/README.md",
+            "url": "https://stylelint-stylistic.github.io/rules/selector-attribute-operator-space-before",
             "fixable": true,
             "stylistic": true,
-            "value": "never"
+            "value": [
+                "never",
+                {}
+            ]
         },
         "@stylistic/selector-combinator-space-after": {
-            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-combinator-space-after/README.md",
+            "url": "https://stylelint-stylistic.github.io/rules/selector-combinator-space-after",
             "fixable": true,
             "stylistic": true,
-            "value": "always"
+            "value": [
+                "always",
+                {}
+            ]
         },
         "@stylistic/selector-combinator-space-before": {
-            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-combinator-space-before/README.md",
+            "url": "https://stylelint-stylistic.github.io/rules/selector-combinator-space-before",
             "fixable": true,
             "stylistic": true,
-            "value": "always"
+            "value": [
+                "always",
+                {}
+            ]
         },
         "@stylistic/selector-descendant-combinator-no-non-space": {
-            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-descendant-combinator-no-non-space/README.md",
+            "url": "https://stylelint-stylistic.github.io/rules/selector-descendant-combinator-no-non-space",
             "fixable": true,
             "stylistic": true,
-            "value": true
+            "value": [
+                true,
+                {}
+            ]
         },
         "@stylistic/selector-list-comma-newline-after": {
-            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-list-comma-newline-after/README.md",
+            "url": "https://stylelint-stylistic.github.io/rules/selector-list-comma-newline-after",
             "fixable": true,
             "stylistic": true,
-            "value": "always"
+            "value": [
+                "always",
+                {}
+            ]
         },
         "@stylistic/selector-list-comma-space-before": {
-            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-list-comma-space-before/README.md",
+            "url": "https://stylelint-stylistic.github.io/rules/selector-list-comma-space-before",
             "fixable": true,
             "stylistic": true,
-            "value": "never"
+            "value": [
+                "never",
+                {}
+            ]
         },
         "@stylistic/selector-max-empty-lines": {
-            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-max-empty-lines/README.md",
+            "url": "https://stylelint-stylistic.github.io/rules/selector-max-empty-lines",
             "fixable": true,
             "stylistic": true,
-            "value": 0
+            "value": [
+                0,
+                {}
+            ]
         },
         "@stylistic/selector-pseudo-class-case": {
-            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-pseudo-class-case/README.md",
+            "url": "https://stylelint-stylistic.github.io/rules/selector-pseudo-class-case",
             "fixable": true,
             "stylistic": true,
-            "value": "lower"
+            "value": [
+                "lower",
+                {}
+            ]
         },
         "@stylistic/selector-pseudo-class-parentheses-space-inside": {
-            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-pseudo-class-parentheses-space-inside/README.md",
+            "url": "https://stylelint-stylistic.github.io/rules/selector-pseudo-class-parentheses-space-inside",
             "fixable": true,
             "stylistic": true,
-            "value": "never"
+            "value": [
+                "never",
+                {}
+            ]
         },
         "@stylistic/selector-pseudo-element-case": {
-            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/selector-pseudo-element-case/README.md",
+            "url": "https://stylelint-stylistic.github.io/rules/selector-pseudo-element-case",
             "fixable": true,
             "stylistic": true,
-            "value": "lower"
+            "value": [
+                "lower",
+                {}
+            ]
         },
         "@stylistic/string-quotes": {
-            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/string-quotes/README.md",
+            "url": "https://stylelint-stylistic.github.io/rules/string-quotes",
             "fixable": true,
             "stylistic": true,
-            "value": "double"
+            "value": [
+                "double",
+                {}
+            ]
         },
         "@stylistic/unit-case": {
-            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/unit-case/README.md",
+            "url": "https://stylelint-stylistic.github.io/rules/unit-case",
             "fixable": true,
             "stylistic": true,
-            "value": "lower"
+            "value": [
+                "lower",
+                {}
+            ]
         },
         "@stylistic/value-list-comma-newline-after": {
-            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/value-list-comma-newline-after/README.md",
+            "url": "https://stylelint-stylistic.github.io/rules/value-list-comma-newline-after",
             "fixable": true,
             "stylistic": true,
-            "value": "always-multi-line"
+            "value": [
+                "always-multi-line",
+                {}
+            ]
         },
         "@stylistic/value-list-comma-space-after": {
-            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/value-list-comma-space-after/README.md",
+            "url": "https://stylelint-stylistic.github.io/rules/value-list-comma-space-after",
             "fixable": true,
             "stylistic": true,
-            "value": "always-single-line"
+            "value": [
+                "always-single-line",
+                {}
+            ]
         },
         "@stylistic/value-list-comma-space-before": {
-            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/value-list-comma-space-before/README.md",
+            "url": "https://stylelint-stylistic.github.io/rules/value-list-comma-space-before",
             "fixable": true,
             "stylistic": true,
-            "value": "never"
+            "value": [
+                "never",
+                {}
+            ]
         },
         "@stylistic/value-list-max-empty-lines": {
-            "url": "https://github.com/stylelint-stylistic/stylelint-stylistic/blob/main/lib/rules/value-list-max-empty-lines/README.md",
+            "url": "https://stylelint-stylistic.github.io/rules/value-list-max-empty-lines",
             "fixable": true,
             "stylistic": true,
-            "value": 0
+            "value": [
+                0,
+                {}
+            ]
         }
     }
 }

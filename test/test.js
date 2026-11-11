@@ -1,96 +1,68 @@
-import fs from 'fs';
-import path from 'path';
-import EC from 'eight-colors';
-import { spawn } from 'child_process';
-
-const sh = (cmd, options = {}) => {
-    return new Promise((resolve, reject) => {
-        const cp = spawn(cmd, {
-            shell: true,
-            stdio: 'inherit',
-            ... options
-        });
-        cp.on('error', (err) => {
-            reject(err);
-        });
-        cp.on('close', (code) => {
-            if (code === 0) {
-                resolve();
-            } else {
-                reject(new Error(`Command exited with code ${code}: ${cmd}`));
-            }
-        });
-    });
-};
-
-const getStylelintCmd = function(stylelintFiles) {
-    // https://stylelint.io/
-
-    const lintBin = 'npx stylelint';
-    // console.log(lintBin);
-    const params = [lintBin];
-
-    params.push(`"${stylelintFiles}"`);
-    params.push('--config stylelint.config.js');
-    params.push('--allow-empty-input');
-    params.push('--color');
-    params.push('--fix');
-
-    return params.join(' ');
-};
+import assert from 'node:assert/strict';
+import {
+    before, describe, it
+} from 'node:test';
+import fs from 'node:fs';
+import path from 'node:path';
+import stylelint from 'stylelint';
 
 const originalDir = path.resolve(import.meta.dirname, 'original');
-const snapshots = [];
-const list = fs.readdirSync(originalDir);
-for (const txtName of list) {
+const formattedDir = path.resolve(import.meta.dirname, 'formatted');
+const snapshots = fs.readdirSync(originalDir).map((txtName) => {
     const filename = txtName.slice(0, -4);
-    // console.log(filename);
-    const savePath = path.resolve(import.meta.dirname, `formatted/${filename}`);
-    const readPath = path.resolve(originalDir, txtName);
-    fs.writeFileSync(savePath, fs.readFileSync(readPath));
+    return {
+        originalPath: path.join(originalDir, txtName),
+        savePath: path.join(formattedDir, filename),
+        snapPath: path.resolve(import.meta.dirname, 'snapshot', filename)
+    };
+});
 
-    const snapPath = path.resolve(import.meta.dirname, `snapshot/${filename}`);
-    snapshots.push({
-        snapPath,
-        savePath
+const readContent = (filename) => fs.readFileSync(filename, 'utf8').replace(/\r\n/g, '\n');
+const lint = async () => {
+    const result = await stylelint.lint({
+        files: snapshots.map((item) => item.savePath),
+        configFile: path.resolve('stylelint.config.js'),
+        fix: true
+    });
+    assert.equal(result.errored, false, JSON.stringify(result.results.map(({ warnings }) => warnings), null, 2));
+    for (const item of result.results) {
+        assert.deepEqual(item.invalidOptionWarnings, []);
+        assert.deepEqual(item.deprecations, []);
+    }
+};
+
+describe('formatting fixtures', {
+    timeout: 30000, concurrency: false
+}, () => {
+    let formatted;
+
+    before(() => {
+        fs.mkdirSync(formattedDir, {
+            recursive: true
+        });
+        for (const item of snapshots) {
+            fs.copyFileSync(item.originalPath, item.savePath);
+        }
     });
 
-}
+    it('formats CSS, SCSS, HTML and Vue without configuration warnings', async () => {
+        await lint();
+    });
 
-const cmd = getStylelintCmd('test/formatted/*.*');
-console.log(cmd);
+    it('finishes formatting embedded HTML styles on the second pass', async () => {
+        // postcss-html and the ordering plugin can require a second fix pass.
+        await lint();
+        formatted = snapshots.map((item) => readContent(item.savePath));
+    });
 
-it('style lint 1', async function() {
-    this.timeout(30000);
-    await sh(cmd);
-});
+    it('is stable after formatting', async () => {
+        await lint();
+        assert.deepEqual(snapshots.map((item) => readContent(item.savePath)), formatted);
+    });
 
-it('style lint 2', async function() {
-    this.timeout(30000);
-    await sh(cmd);
-});
-
-it('check results', () => {
-
-    let hasError;
-    for (const item of snapshots) {
-
-        const { snapPath, savePath } = item;
-
-        const c1 = fs.readFileSync(snapPath).toString('utf-8').replace(/\r\n/g, '\n');
-        const c2 = fs.readFileSync(savePath).toString('utf-8').replace(/\r\n/g, '\n');
-
-        if (c1 !== c2) {
-            console.log('=========================================================');
-            EC.logCyan(c1);
-            EC.logRed(c2);
-            hasError = true;
+    it('matches the reviewed snapshots', () => {
+        for (const item of snapshots) {
+            assert.equal(readContent(item.savePath), readContent(item.snapPath), item.savePath);
         }
-
-    }
-
-    if (hasError) {
-        throw new Error('failed');
-    }
-
+    });
 });
